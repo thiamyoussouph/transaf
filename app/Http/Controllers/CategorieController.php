@@ -14,8 +14,8 @@ class CategorieController extends Controller
      */
     public function index()
     {
-        $categories = Categorie::all();
-        return view('categorie.index', compact('categories'));
+        $Categories = Categorie::all();
+        return view('categorie.index', compact('Categories'));
     }
 
     /**
@@ -25,7 +25,7 @@ class CategorieController extends Controller
      */
     public function create()
     {
-    
+
     }
 
     /**
@@ -36,7 +36,7 @@ class CategorieController extends Controller
      */
     public function store(Request $request)
     {
-        $categories = Categorie::create($request->all());
+        $Categories = Categorie::create($request->all());
         return redirect()->route('categorie.index');
     }
 
@@ -71,8 +71,8 @@ class CategorieController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $categorie = Categorie:: find($id);
-        $categorie->update($request->all());
+        $Categories = Categorie:: find($id);
+        $Categories->update($request->all());
         return redirect()->route('categorie.index');
     }
 
@@ -84,8 +84,8 @@ class CategorieController extends Controller
      */
     public function destroy($id)
     {
-        $categorie = Categorie:: find($id);
-        $categorie->delete();
+        $Categories = Categorie:: find($id);
+        $Categories->delete();
         return redirect()->route('categorie.index');
     }
 }

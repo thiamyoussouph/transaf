@@ -25,8 +25,6 @@ class CamionController extends Controller
      */
     public function create()
     {
-
-
         return view('camion.forme',);
     }
 
@@ -42,6 +40,7 @@ class CamionController extends Controller
         Camion::create($request->all());
         return redirect()->route('camion.index');
     }
+
 
     /**
      * Display the specified resource.
@@ -88,6 +87,9 @@ class CamionController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $Camion = Camion::findOrFail($id);
+        $Camion->delete();
+
+        return redirect()->route('camion.index');
     }
 }
