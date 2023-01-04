@@ -1,4 +1,4 @@
-git@extends('app')
+@extends('app')
 
 @section('content')
 
@@ -34,5 +34,6 @@ git@extends('app')
         @endforeach
     </tbody>
 </table>
+
 
 @endsection
