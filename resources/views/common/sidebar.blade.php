@@ -54,8 +54,6 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Gestion Categories:</h6>
                 <a href="/categorie" class="collapse-item" >Lister</a>
-                <a class="collapse-item" href="utilities-border.html">Ajout</a>
-
             </div>
         </div>
     </li>
