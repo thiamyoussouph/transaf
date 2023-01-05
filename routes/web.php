@@ -39,3 +39,9 @@ Route::get('/categorie', [App\Http\Controllers\CategorieController::class, 'inde
 Route::get('/categorie/create', [App\Http\Controllers\CategorieController::class, 'create'])->name('categorie.forme');
 Route::post('/add', [App\Http\Controllers\CategorieController::class, 'store'])->name('categorie.store');
 Route::get('/categorie/destroy/{id}', [App\Http\Controllers\CategorieController::class, 'destroy'])->name('categorie.destroy');
+
+
+Route::get('/chauffeur', [App\Http\Controllers\ChauffeurController::class, 'index'])->name('chauffeur.index');
+Route::get('/chauffeur/create', [App\Http\Controllers\ChauffeurController::class, 'create'])->name('chauffeur.forme');
+Route::post('/chauffeuradd', [App\Http\Controllers\ChauffeurController::class, 'store'])->name('chauffeur.store');
+Route::get('/chauffeur/destroy/{id}', [App\Http\Controllers\ChauffeurController::class, 'destroy'])->name('chauffeur.destroy');
