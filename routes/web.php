@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
- use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Auth;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,5 +39,3 @@ Route::get('/categorie', [App\Http\Controllers\CategorieController::class, 'inde
 Route::get('/categorie/create', [App\Http\Controllers\CategorieController::class, 'create'])->name('categorie.forme');
 Route::post('/add', [App\Http\Controllers\CategorieController::class, 'store'])->name('categorie.store');
 Route::get('/categorie/destroy/{id}', [App\Http\Controllers\CategorieController::class, 'destroy'])->name('categorie.destroy');
-
-
