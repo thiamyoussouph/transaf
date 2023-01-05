@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Chauffeur;
-
-class chauffeurController extends Controller
+use App\Models\Mouvement_lieu;
+class Mouvement_lieuController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,8 @@ class chauffeurController extends Controller
      */
     public function index()
     {
-        $chauffeurs = Chauffeur::all();
-        return view('chauffeur.index', compact('chauffeurs'));
+        $Mouvement_lieu = Mouvement_lieu::all();
+        return view('mouvement_lieu.index', compact('Mouvement_lieu'));
     }
 
     /**
@@ -25,7 +24,7 @@ class chauffeurController extends Controller
      */
     public function create()
     {
-        return view('chauffeur.forme',);
+        return view('mouvement_lieu.forme',);
     }
 
     /**
@@ -36,8 +35,8 @@ class chauffeurController extends Controller
      */
     public function store(Request $request)
     {
-        Chauffeur::create($request->all());
-        return redirect()->route('chauffeur.index');
+        Mouvement_lieu::create($request->all());
+        return redirect()->route('mouvement_lieu.index');
     }
 
     /**
@@ -48,9 +47,9 @@ class chauffeurController extends Controller
      */
     public function show($id)
     {
-
-        $chauffeur = Chauffeur::find($id);
-        return view('chauffeur.detail', ['chauffeur' => $chauffeur]);
+                
+                $mouvement_lieu = Mouvement_lieu::find($id);
+                return view('mouvement_lieu.detail', ['mouvement_lieu' => $mouvement_lieu]);
     }
 
     /**
@@ -61,8 +60,8 @@ class chauffeurController extends Controller
      */
     public function edit($id)
     {
-        $chauffeur = Chauffeur::find($id);
-        return view('chauffeur.forme', ['chauffeur' => $chauffeur]);
+        $mouvement_lieu = Mouvement_lieu::find($id);
+        return view('mouvement_lieu.forme', ['mouvement_lieu' => $mouvement_lieu]);
     }
 
     /**
@@ -74,8 +73,8 @@ class chauffeurController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Chauffeur::find($id)->update($request->all());
-        return redirect()->route('chauffeur.index');
+        $mouvement_lieu = Mouvement_lieu::find($id);
+        $mouvement_lieu->update($request->all());
     }
 
     /**
@@ -86,7 +85,7 @@ class chauffeurController extends Controller
      */
     public function destroy($id)
     {
-        Chauffeur::find($id)->delete();
-        return redirect()->route('chauffeur.index');
+        $mouvement_lieu = Mouvement_lieu::find($id);
+        $mouvement_lieu->delete();
     }
 }

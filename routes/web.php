@@ -45,3 +45,22 @@ Route::get('/chauffeur', [App\Http\Controllers\ChauffeurController::class, 'inde
 Route::get('/chauffeur/create', [App\Http\Controllers\ChauffeurController::class, 'create'])->name('chauffeur.forme');
 Route::post('/chauffeuradd', [App\Http\Controllers\ChauffeurController::class, 'store'])->name('chauffeur.store');
 Route::get('/chauffeur/destroy/{id}', [App\Http\Controllers\ChauffeurController::class, 'destroy'])->name('chauffeur.destroy');
+
+Route::get('/chauffeur_Camion', [App\Http\Controllers\chauffeur_CammionController::class, 'index'])->name('chauffeur_Camion.index');
+Route::get('/chauffeur_Camion/create', [App\Http\Controllers\chauffeur_CammionController::class, 'create'])->name('chauffeur_Camion.forme');
+Route::post('/chauffeur_Camionadd', [App\Http\Controllers\chauffeur_CammionController::class, 'store'])->name('chauffeur_Camion.store');
+Route::get('/chauffeur_Camion/destroy/{id}', [App\Http\Controllers\chauffeur_CammionController::class, 'destroy'])->name('chauffeur_Camion.destroy');
+
+
+Route::get('/mouvement', [App\Http\Controllers\MouvementController::class, 'index'])->name('mouvement.index');
+Route::get('/mouvement/create', [App\Http\Controllers\MouvementController::class, 'create'])->name('mouvement.forme');
+Route::post('/mouvementadd', [App\Http\Controllers\MouvementController::class, 'store'])->name('mouvement.store');
+Route::get('/mouvement/destroy/{id}', [App\Http\Controllers\MouvementController::class, 'destroy'])->name('mouvement.destroy');
+
+
+
+Route::get('mouvement_lieu', [App\Http\Controllers\Mouvement_lieuController::class, 'index'])->name('mouvement_lieu.index');
+Route::get('mouvement_lieu/create', [App\Http\Controllers\Mouvement_lieuController::class, 'create'])->name('mouvement_lieu.forme');
+Route::post('mouvement_lieuadd', [App\Http\Controllers\Mouvement_lieuController::class, 'store'])->name('mouvement_lieu.store');
+Route::get('mouvement_lieu/destroy/{id}', [App\Http\Controllers\Mouvement_lieuController::class, 'destroy'])->name('mouvement_lieu.destroy');
+

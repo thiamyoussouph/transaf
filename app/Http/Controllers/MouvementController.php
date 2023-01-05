@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Camion;
 use Illuminate\Http\Request;
-use App\Models\Chauffeur;
-
-class chauffeurController extends Controller
+use App\Models\Mouvement;
+use App\Models\User;
+use App\Models\Categorie;
+use App\Models\Mouvement_lieu;
+class MouvementController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +17,9 @@ class chauffeurController extends Controller
      */
     public function index()
     {
-        $chauffeurs = Chauffeur::all();
-        return view('chauffeur.index', compact('chauffeurs'));
+        $Mouvement = Mouvement::all();
+        return view('mouvement.index', compact('Mouvement'));
+    
     }
 
     /**
@@ -25,7 +29,12 @@ class chauffeurController extends Controller
      */
     public function create()
     {
-        return view('chauffeur.forme',);
+        $users = User::all();
+        $categories = Categorie::all();
+        $camions=Camion::all();
+
+        return view('mouvement.forme', compact('users','categories','camions'));
+
     }
 
     /**
@@ -36,8 +45,8 @@ class chauffeurController extends Controller
      */
     public function store(Request $request)
     {
-        Chauffeur::create($request->all());
-        return redirect()->route('chauffeur.index');
+        Mouvement::create($request->all());
+        return redirect()->route('mouvement.index');
     }
 
     /**
@@ -48,9 +57,9 @@ class chauffeurController extends Controller
      */
     public function show($id)
     {
-
-        $chauffeur = Chauffeur::find($id);
-        return view('chauffeur.detail', ['chauffeur' => $chauffeur]);
+            
+            $mouvement = Mouvement::find($id);
+            return view('mouvement.detail', ['mouvement' => $mouvement]);
     }
 
     /**
@@ -61,8 +70,8 @@ class chauffeurController extends Controller
      */
     public function edit($id)
     {
-        $chauffeur = Chauffeur::find($id);
-        return view('chauffeur.forme', ['chauffeur' => $chauffeur]);
+        $mouvement = Mouvement::find($id);
+        return view('mouvement.forme', ['mouvement' => $mouvement]);
     }
 
     /**
@@ -74,8 +83,9 @@ class chauffeurController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Chauffeur::find($id)->update($request->all());
-        return redirect()->route('chauffeur.index');
+        $mouvement = Mouvement::find($id);
+        $mouvement->update($request->all());
+        return redirect()->route('mouvement.index');
     }
 
     /**
@@ -86,7 +96,8 @@ class chauffeurController extends Controller
      */
     public function destroy($id)
     {
-        Chauffeur::find($id)->delete();
-        return redirect()->route('chauffeur.index');
+        $mouvement = Mouvement::find($id);
+        $mouvement->delete();
+        return redirect()->route('mouvement.index');
     }
 }

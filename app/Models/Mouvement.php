@@ -9,8 +9,10 @@ class Mouvement extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'numeromouvement',
         'categorie_id',
         'description',
+        'camion_id',
         'quantite',
         'user_id',
    ];
