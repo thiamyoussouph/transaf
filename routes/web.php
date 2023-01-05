@@ -26,8 +26,8 @@ Auth::routes();
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/camion', [App\Http\Controllers\CamionController::class, 'index'])->name('camion.index');
- Route::get('/camion/create', [App\Http\Controllers\CamionController::class, 'create'])->name('camion.forme');
-Route::post('/add', [App\Http\Controllers\CamionController::class, 'store'])->name('camion.store');
+Route::get('/camion/create', [App\Http\Controllers\CamionController::class, 'create'])->name('camion.forme');
+Route::post('/ajout', [App\Http\Controllers\CamionController::class, 'store'])->name('camion.store');
 Route::get('/camion/{id}', [App\Http\Controllers\CamionController::class, 'show'])->name('camion.detail');
 Route::get('/camion/destroy/{id}', [App\Http\Controllers\CamionController::class, 'destroy'])->name('camion.destroy');
 

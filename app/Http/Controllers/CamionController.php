@@ -36,7 +36,6 @@ class CamionController extends Controller
      */
     public function store(Request $request)
     {
-
         Camion::create($request->all());
         return redirect()->route('camion.index');
     }
@@ -52,7 +51,7 @@ class CamionController extends Controller
     {
 
         $Camion = Camion::find($id);
-        return view('camion.detail',['Camion'=>$Camion]);
+        return view('camion.detail', ['Camion' => $Camion]);
     }
 
     /**
