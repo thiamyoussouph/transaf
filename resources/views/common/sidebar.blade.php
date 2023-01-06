@@ -68,11 +68,13 @@
             data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Gestion Lieux:</h6>
-                <a href="#" class="collapse-item" >Lister</a>
-                <a href="#" class="collapse-item" >Ajout</a>
+                <a href="/lieu" class="collapse-item" >Lister</a>
+                <a href="/lieu/create" class="collapse-item" >Ajout</a>
             </div>
         </div>
     </li>
+
+
 
     <!-- Divider -->
     <hr class="sidebar-divider">
