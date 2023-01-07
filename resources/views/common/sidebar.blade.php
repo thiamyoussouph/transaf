@@ -2,8 +2,10 @@
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-
-        <div class="sidebar-brand-text "><img src="photo.jpeg" alt="" srcset="" height="80"></div>
+       
+        <div class="sidebar-brand-text  ">
+            <img class="rounded-circle" src="{{asset('admin/img/photo.jpeg')}}" alt="" srcset="" height="70" width="50">
+        </div>
     </a>
 
     <!-- Divider -->
@@ -59,7 +61,7 @@
         </div>
     </li>
 
-    <!-- Divider -->
+    {{-- <!-- Divider -->
     <hr class="sidebar-divider">
 
     <!-- Heading -->
@@ -114,6 +116,6 @@
         <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
         <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components, and more!</p>
         <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a>
-    </div>
+    </div> --}}
 
 </ul>
