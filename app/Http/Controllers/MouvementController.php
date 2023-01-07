@@ -29,11 +29,11 @@ class MouvementController extends Controller
      */
     public function create()
     {
-        $users = User::all();
+       
         $categories = Categorie::all();
         $camions=Camion::all();
 
-        return view('mouvement.forme', compact('users','categories','camions'));
+        return view('mouvement.forme', compact('categories','camions'));
 
     }
 
