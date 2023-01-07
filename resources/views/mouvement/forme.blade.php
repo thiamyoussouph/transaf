@@ -18,7 +18,7 @@
                             <label for="date" class="form-label">numero mouvement</label>
                             <input type="numero" class="form-control" id="date" name="numeromouvement">
                         </div>
-                      
+
                         <div class="mb-3">
                             <label for="type" class="form-label">description</label>
                             <input type="text" class="form-control" id="type" name="description">
@@ -30,10 +30,10 @@
                             <label for="quantite" class="form-label">quantite</label>
                             <input type="number" class="form-control" id="quantite" name="quantite">
                         </div>
-                       
+
                         <div class="mb-3">
                             <div class="mb-5">
-                            <label for="heure" class="form-label">heure</label>
+                                <label for="heure" class="form-label">heure</label>
                                 <select class="form-select" aria-label="Default select example" name="camion_id">
                                     <option selected>cammions</option>
                                     @foreach($camions as $camion)
@@ -51,12 +51,11 @@
                                     </select>
                                 </div>
                                 <div class="mb-5">
-                                    <select class="form-select" aria-label="Default select example" name="user_id">
-                                        <option selected>Utilities</option>
-                                        @foreach($users as $user)
-                                        <option value="{{$user->id}}">{{$user->prenom}}</option>
-                                        @endforeach
-                                    </select>
+                                    <div class="mb-3" style="display: none;">
+                                        <label for="type" class="form-label"></label>
+                                        <input type="text" class="form-control" id="type" value="{{ Auth::user()->id}}" name="user_id">
+                                    </div>
+                                    
 
                                 </div>
                                 <div class="mb-3">
