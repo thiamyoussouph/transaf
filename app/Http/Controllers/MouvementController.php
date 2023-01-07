@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Carbon\Carbon;
 use App\Models\Camion;
 use Illuminate\Http\Request;
 use App\Models\Mouvement;
@@ -45,7 +45,23 @@ class MouvementController extends Controller
      */
     public function store(Request $request)
     {
-        Mouvement::create($request->all());
+        $mouvement=new Mouvement();
+        $mvtLieu=new Mouvement_lieu();
+        $date = Carbon::now()->toDateTimeString();
+        $mvt="Mvt_";
+        $mouvement->numeromouvement=$mvt.$date;
+        $mouvement->categorie_id=$request["categorie_id"];
+        $mouvement->description=$request["description"];
+        $mouvement->camion_id=$request["camion_id"];
+        $mouvement->quantite=$request["quantite"];
+        $mouvement->user_id=$request["user_id"];
+        $mouvement->save();
+        $id=$mouvement->id;
+        $mvtLieu->mouvement_id=$id;
+        $mvtLieu->lieu_id=1;
+        $mvtLieu->datecreation=$date;
+        $mvtLieu->save();
+        dd($id);
         return redirect()->route('mouvement.index');
     }
 

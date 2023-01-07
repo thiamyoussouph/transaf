@@ -11,7 +11,7 @@ class Mouvement_lieu extends Model
     protected $fillable = [
         'mouvement_id',
         'lieu_id',
-        'date',
+        'datecreation',
     ];
     public function lieu()
     {
