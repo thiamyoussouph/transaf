@@ -13,8 +13,8 @@ class LieuController extends Controller
      */
     public function index()
     {
-      $lieux = Lieu::all();
-        return view('lieu.index', compact('lieux'));
+      $Lieux = Lieu::all();
+        return view('lieu.index', compact('Lieux'));
 
     }
 
@@ -36,7 +36,8 @@ class LieuController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Lieux::create($request->all());
+        return redirect()->route('lieu.index');
     }
 
     /**
