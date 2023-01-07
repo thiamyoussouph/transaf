@@ -25,7 +25,7 @@ class LieuController extends Controller
      */
     public function create()
     {
-        //
+        return view('lieu.forme',);
     }
 
     /**
@@ -36,7 +36,7 @@ class LieuController extends Controller
      */
     public function store(Request $request)
     {
-        Lieux::create($request->all());
+        Lieu::create($request->all());
         return redirect()->route('lieu.index');
     }
 

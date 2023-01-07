@@ -33,7 +33,7 @@ Route::get('/camion/destroy/{id}', [App\Http\Controllers\CamionController::class
 
 Route::get('/lieu', [App\Http\Controllers\LieuController::class, 'index'])->name('lieu.index');
 Route::get('/lieu/create', [App\Http\Controllers\LieuController::class, 'create'])->name('lieu.forme');
-Route::post('/add', [App\Http\Controllers\LieuController::class, 'store'])->name('lieu.store');
+Route::post('/addLieu', [App\Http\Controllers\LieuController::class, 'store'])->name('lieu.store');
 Route::get('/lieu/destroy/{id}', [App\Http\Controllers\LieuController::class, 'destroy'])->name('lieu.destroy');
 
 Route::get('/categorie', [App\Http\Controllers\CategorieController::class, 'index'])->name('categorie.index');
