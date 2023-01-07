@@ -36,6 +36,15 @@ class CamionController extends Controller
      */
     public function store(Request $request)
     {
+
+        request()->validate([
+            'matricule' => 'required',
+            'marque' => 'required',
+
+            'volume' => 'required',   
+            
+             ]);
+
         Camion::create($request->all());
         return redirect()->route('camion.index');
     }
