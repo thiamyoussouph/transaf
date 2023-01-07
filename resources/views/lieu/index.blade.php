@@ -3,8 +3,8 @@
 @section('content')
 
 <div class="row">
-    <div class="container">
-        <div class="col-md-6">
+    <div class="container d-flex">
+        <div class="col-md-6 ">
             <div class="card shadow mb-4">
                 <div class="card-header py-2">
                     <h6 class="m-0 font-weight-bold text-primary">Liste Lieux</h6>
