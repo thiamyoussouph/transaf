@@ -2,7 +2,7 @@
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-       
+
         <div class="sidebar-brand-text "><img src="photo.jpeg" alt="" srcset="" height="80"></div>
     </a>
 
@@ -35,10 +35,15 @@
                 <h6 class="collapse-header">Gestion Camions:</h6>
                 <a class="collapse-item" href="/camion">Lister</a>
                 <a class="collapse-item" href="/camion/create">Ajout</a>
+              
+
             </div>
         </div>
+        
+       
     </li>
-    
+   
+
 
     <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
