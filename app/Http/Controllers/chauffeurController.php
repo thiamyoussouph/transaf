@@ -25,6 +25,7 @@ class chauffeurController extends Controller
      */
     public function create()
     {
+  
         return view('chauffeur.forme',);
     }
 
@@ -36,6 +37,13 @@ class chauffeurController extends Controller
      */
     public function store(Request $request)
     {
+        request()->validate([
+            'nom' => 'required',
+            'prenom' => 'required',
+            'telephone' => 'required|numeric',
+            'adresse' => 'required',
+            'CIN' => 'required|unique:chauffeurs',
+                ]);
         Chauffeur::create($request->all());
         return redirect()->route('chauffeur.index');
     }

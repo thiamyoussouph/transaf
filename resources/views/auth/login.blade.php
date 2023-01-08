@@ -10,7 +10,7 @@
                 <!-- Nested Row within Card Body -->
                 <div class="row">
                     <div class="col-lg-6 d-none d-lg-block ">
-                        <img class="img-profile col-lg-6 " width="100" height="100"
+                        <img class="img-profile col-lg-6 " width="100" height="100" 
                         src="{{asset('admin/img/photo.jpeg')}}">
                 </a>
                     </div>
@@ -62,9 +62,7 @@
                             <div class="text-center">
                                 <a class="small" href="{{route('password.request')}}">Forgot Password?</a>
                             </div>
-                            <div class="text-center">
-                                <a class="small" href="{{('register')}}">Create an Account!</a>
-                            </div>
+                           
                         </div>
                     </div>
                 </div>

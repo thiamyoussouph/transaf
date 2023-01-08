@@ -36,6 +36,9 @@ class CategorieController extends Controller
      */
     public function store(Request $request)
     {
+        request()->validate([
+           'libelle' => 'required|unique:categories',
+                ]);
         $Categories = Categorie::create($request->all());
         return redirect()->route('categorie.index');
     }
