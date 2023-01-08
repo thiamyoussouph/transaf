@@ -10,6 +10,10 @@
                 <form action="{{ route('mouvement.store.decharge') }}" method="POST">
                     @csrf
                     <div class="row">
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
                         <div class="col-6">
                          <div class="mb-5">
                                     <label for="type" class="form-label">Mouvement</label>

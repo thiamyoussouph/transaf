@@ -43,14 +43,47 @@
         </div>
         
        
+       
     </li>
    
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwos" aria-expanded="true" aria-controls="collapseTwos">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>utilisateur</span>
+        </a>
+        <div id="collapseTwos" class="collapse" aria-labelledby="headingTwos" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Gestion utilisateur:</h6>
+                <a class="collapse-item" href="/camion">Lister</a>
+                <a class="collapse-item" href="{{('register')}}">Ajout</a>
+              
+
+            </div>
+        </div>
+
+    </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwoss" aria-expanded="true" aria-controls="collapseTwoss">
+            <i class="fas fa-fw fa-wa"></i>
+            <span>mouvements</span>
+        </a>
+        <div id="collapseTwoss" class="collapse" aria-labelledby="headingTwoss" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Gestion chargement:</h6>
+                <a class="collapse-item" href="/camion">Lister</a>
+                <a class="collapse-item" href="{{('register')}}">Ajout</a>
+              
+
+            </div>
+        </div>
+
+    </li>
 
 
     <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-            <i class="fas fa-fw fa-wrench"></i>
+            <i class="fas fa-fw fa-user"></i>
             <span>Categorie</span>
         </a>
         <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">

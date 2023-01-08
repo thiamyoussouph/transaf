@@ -12,6 +12,7 @@ class Mouvement_lieu extends Model
         'mouvement_id',
         'lieu_id',
         'datecreation',
+        'quantite',
     ];
     public function lieu()
     {

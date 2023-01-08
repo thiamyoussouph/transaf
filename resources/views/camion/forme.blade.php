@@ -8,6 +8,14 @@
                     <h3 class="card-title m-2">Ajouter un camion</h3>
                 </div>
                 <div class="card-body">
+
+                @if($errors->any())
+                @foreach($errors->all() as $error)
+                <div class="alert alert-danger" role="alert">
+                    {{$error}}
+                </div>
+                @endforeach
+                @endif
                     <form action="{{route('camion.store')}}" method="POST">
                         @csrf
                         <div class="mb-3">

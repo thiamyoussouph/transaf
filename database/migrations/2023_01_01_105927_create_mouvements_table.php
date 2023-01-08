@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('mouvements', function (Blueprint $table) {
             $table->id();
             $table->string('numeromouvement');
-            $table->string('quantite');
-            $table->float('description');
+            $table->string('description');
+            $table->boolean('decharger')->default(false);
             $table->unsignedBigInteger('categorie_id');
             $table->unsignedBigInteger('camion_id');
             $table->unsignedBigInteger('user_id');

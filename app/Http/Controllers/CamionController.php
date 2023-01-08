@@ -38,10 +38,9 @@ class CamionController extends Controller
     {
 
         request()->validate([
-            'matricule' => 'required',
+            'matricule' => 'required|unique:camions|max:9',
             'marque' => 'required',
-
-            'volume' => 'required',   
+            'volume' => 'required|numeric',   
             
              ]);
 

@@ -12,10 +12,11 @@ return [
     | has failed, such as for an invalid token or invalid new password.
     |
     */
-'password' => 'le mot de passe dois  avoir au moins  six characters et etre conforme a la confirmation.',
-'reset' => 'votre mot de passe a ete reinitialiser!',
-'sent' => 'Nous vous avons envoye par email le lien de reinitialisation de mot de passe!',
-'token' => 'Ce jeton de reinitialisation de mot de passe est invalide.',
-'user' => "Nous ne pouvons pas trouver un utilisateur avec cette adresse email.",
+
+    'reset' => 'Your password has been reset!',
+    'sent' => 'We have emailed your password reset link!',
+    'throttled' => 'Please wait before retrying.',
+    'token' => 'This password reset token is invalid.',
+    'user' => "We can't find a user with that email address.",
 
 ];

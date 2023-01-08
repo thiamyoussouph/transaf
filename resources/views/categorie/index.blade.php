@@ -53,6 +53,13 @@
                      <h3 class="card-title m-0">Ajouter un Categorie</h3>
                  </div>
                  <div class="card-body">
+                    @if($errors->any())
+                    @foreach($errors->all() as $error)
+                    <div class="alert alert-danger" role="alert">
+                        {{$error}}
+                    </div>
+                    @endforeach
+                    @endif
                     <form action="/add" method="POST" >
                         @csrf
                             <div class="mb-3">
