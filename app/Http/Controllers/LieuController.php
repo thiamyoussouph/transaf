@@ -25,7 +25,7 @@ class LieuController extends Controller
      */
     public function create()
     {
-        //
+        return view('lieu.forme',);
     }
 
     /**

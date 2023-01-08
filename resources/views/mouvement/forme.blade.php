@@ -11,10 +11,7 @@
                     @csrf
                     <div class="row">
                         <div class="col-6">
-                            <div class="mb-3">
-                                <label for="date" class="form-label">numero mouvement</label>
-                                <input type="numero" class="form-control" id="date" name="numeromouvement">
-                            </div>
+
                             <div class="mb-3">
                                 <label for="type" class="form-label">description</label>
                                 <input type="text" class="form-control" id="type" name="description">
@@ -28,7 +25,7 @@
 
                             <div class="mb-3">
                                 <div class="mb-5">
-                                    <label for="heure" class="form-label">heure</label>
+                                    <label for="heure" class="form-label">camion</label>
                                     <select class="form-select" aria-label="Default select example" name="camion_id">
                                         <option selected>cammions</option>
                                         @foreach ($camions as $camion)
@@ -38,6 +35,7 @@
                                 </div>
                                 <div class="mb-5">
                                     <div class="mb-5">
+                                        <label for="heure" class="form-label">categorie</label>
                                         <select class="" aria-label="Default select example" name="categorie_id">
                                             <option selected>categorie</option>
                                             @foreach ($categories as $categorie)
@@ -45,17 +43,7 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="mb-5">
-                                        <label for="type" class="form-label">Mouvement</label>
-                                        <select class="" aria-label="Default select example" name="mvt_id">
-                                            @foreach ($mouvements as $mouvement)
-                                                @if ($mouvement->decharger == 0)
-                                                    <option value="{{ $mouvement->id }}">{{ $mouvement->numeromouvement }}
-                                                    </option>
-                                                @endif
-                                            @endforeach
-                                        </select>
-                                    </div>
+
                                     <div class="mb-5">
                                         <div class="mb-3" style="display: none;">
                                             <label for="type" class="form-label"></label>

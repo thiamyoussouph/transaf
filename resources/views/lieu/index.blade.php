@@ -54,7 +54,7 @@
                      <h3 class="card-title m-0">Ajouter un Lieux</h3>
                  </div>
                  <div class="card-body">
-                    <form action="/add" method="POST" >
+                    <form action="/addLieu" method="POST" >
                         @csrf
                             <div class="mb-3">
                                  <label for="libelle" class="form-label">Libelle</label>

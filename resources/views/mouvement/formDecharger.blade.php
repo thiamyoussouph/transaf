@@ -10,7 +10,6 @@
                 <form action="{{ route('mouvement.store.decharge') }}" method="POST">
                     @csrf
                     <div class="row">
-
                         <div class="col-6">
                          <div class="mb-5">
                                     <label for="type" class="form-label">Mouvement</label>
@@ -28,7 +27,7 @@
                                 <input type="number" class="form-control" id="quantite" name="quantite">
                             </div>
                             <div class="mb-5">
-                                
+
                                 <div class="mb-3">
                                     <button type="submit" class="btn btn-primary" style="width: 90%;">Ajouter</button>
                                 </div>

@@ -24,4 +24,12 @@ class Mouvement extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function camion()
+    {
+        return $this->belongsTo(Camion::class);
+    }
+    public function categorie()
+    {
+        return $this->belongsTo(Categorie::class);
+    }
 }
