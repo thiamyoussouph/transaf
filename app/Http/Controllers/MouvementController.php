@@ -49,8 +49,8 @@ class MouvementController extends Controller
 
         $categories = Categorie::all();
         $camions=Camion::all();
-        $mouvements= Mouvement::All()->sortByDesc('id');
-        return view('mouvement.forme', compact('categories','camions','mouvements'));
+        $Mouvement= Mouvement::All()->sortByDesc('id');
+        return view('mouvement.forme', compact('categories','camions','Mouvement'));
 
     }
     public function details(){
@@ -67,6 +67,7 @@ class MouvementController extends Controller
      */
     public function store(Request $request)
     {
+        Mouvement::create($request->all());
         $mouvement=new Mouvement();
         $mvtLieu=new Mouvement_lieu();
         $date = str_replace(' ','_',Carbon::now()->toDateTimeString());
@@ -86,7 +87,11 @@ class MouvementController extends Controller
         $mvtLieu->quantite=$request["quantite"];
         $mvtLieu->save();
         dd($id);
-        return redirect()->route('mouvement.index');
+
+
+
+        return redirect()->route('mouvement.forme');
+
     }
     public function decharger(Request $request)
     {

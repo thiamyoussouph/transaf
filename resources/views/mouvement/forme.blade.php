@@ -7,7 +7,7 @@
                 <h3 class="card-title m-0">Ajoute mouvement</h3>
             </div>
             <div class="card-body">
-                <form action="{{ route('mouvement.store') }}" method="POST">
+                <form action="/mouvementadd" method="POST">
                     @csrf
                     <div class="row">
                         <div class="col-6">
@@ -27,7 +27,7 @@
                                 <div class="mb-5">
                                     <label for="heure" class="form-label">camion</label>
                                     <select class="form-select" aria-label="Default select example" name="camion_id">
-                                        <option selected>cammions</option>
+                                        <option selected>camions</option>
                                         @foreach ($camions as $camion)
                                             <option value="{{ $camion->id }}">{{ $camion->matricule }}</option>
                                         @endforeach
