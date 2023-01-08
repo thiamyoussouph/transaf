@@ -69,8 +69,8 @@
         <div id="collapseTwos" class="collapse" aria-labelledby="headingTwos" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Gestion utilisateur:</h6>
-                <a class="collapse-item" href="/camion">Lister</a>
-                <a class="collapse-item" href="{{('register')}}">Ajout</a>
+                <a class="collapse-item" href="">Lister</a>
+                <a class="collapse-item" href="">Ajout</a>
               
 
             </div>
