@@ -8,6 +8,9 @@ use App\Models\Mouvement;
 use App\Models\User;
 use App\Models\Categorie;
 use App\Models\Mouvement_lieu;
+use Illuminate\Support\Facades\DB;
+
+
 class MouvementController extends Controller
 {
     /**
@@ -29,14 +32,19 @@ class MouvementController extends Controller
      */
     public function create()
     {
-       
+        
         $categories = Categorie::all();
-        $camions=Camion::all();
-
+        $camions=Camion::all();     
+        dd("bonjour");
         return view('mouvement.forme', compact('categories','camions'));
 
     }
-
+    public function details(){
+        
+        $chargements=DB::table('mouvement_lieus')->join('mouvements','mouvements.id','=','mouvement_lieus.mouvement_id')->where('lieu_id',2)->get();
+        $mouvement2=Mouvement_lieu::where('lieu_id',2)->get();
+        return view('mouvement.detail', compact('chargements'));
+    }
     /**
      * Store a newly created resource in storage.
      *

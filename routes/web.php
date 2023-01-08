@@ -57,6 +57,7 @@ Route::get('/mouvement', [App\Http\Controllers\MouvementController::class, 'inde
 Route::get('/mouvement/create', [App\Http\Controllers\MouvementController::class, 'create'])->name('mouvement.forme');
 Route::post('/mouvementadd', [App\Http\Controllers\MouvementController::class, 'store'])->name('mouvement.store');
 Route::get('/mouvement/destroy/{id}', [App\Http\Controllers\MouvementController::class, 'destroy'])->name('mouvement.destroy');
+Route::get('/mouvement/details', [App\Http\Controllers\MouvementController::class, 'details'])->name('mouvement.details');
 
 
 
