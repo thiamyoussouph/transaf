@@ -55,7 +55,9 @@ Route::get('/chauffeur_Camion/destroy/{id}', [App\Http\Controllers\chauffeur_Cam
 
 Route::get('/mouvement', [App\Http\Controllers\MouvementController::class, 'index'])->name('mouvement.index');
 Route::get('/mouvement/create', [App\Http\Controllers\MouvementController::class, 'create'])->name('mouvement.forme');
+Route::get('/mouvement/create/decharger', [App\Http\Controllers\MouvementController::class, 'createDecharge'])->name('mouvement.formeDecharger');
 Route::post('/mouvementadd', [App\Http\Controllers\MouvementController::class, 'store'])->name('mouvement.store');
+Route::post('/mouvementadddecharge', [App\Http\Controllers\MouvementController::class, 'decharger'])->name('mouvement.store.decharge');
 Route::get('/mouvement/destroy/{id}', [App\Http\Controllers\MouvementController::class, 'destroy'])->name('mouvement.destroy');
 
 
