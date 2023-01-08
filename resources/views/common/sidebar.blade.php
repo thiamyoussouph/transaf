@@ -27,12 +27,12 @@
     </div>
 
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-            aria-expanded="true" aria-controls="collapseTwo">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseT"
+            aria-expanded="true" aria-controls="collapseT">
             <i class="fas fa-fw fa-cog"></i>
             <span>Chargement</span>
         </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="collapseT" class="collapse" aria-labelledby="headingT" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Gestion des mouvements:</h6>
                 <a class="collapse-item" href="/mouvement">Lister</a>
@@ -97,11 +97,11 @@
 
     <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilit" aria-expanded="true" aria-controls="collapseUtilit">
             <i class="fas fa-fw fa-user"></i>
             <span>Categorie</span>
         </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+        <div id="collapseUtilit" class="collapse" aria-labelledby="headingUtilit" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Gestion Categories:</h6>
                 <a href="/categorie" class="collapse-item">Lister</a>
