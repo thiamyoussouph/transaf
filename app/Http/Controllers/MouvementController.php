@@ -50,7 +50,7 @@ class MouvementController extends Controller
         $categories = Categorie::all();
         $camions=Camion::all();
         $Mouvement= Mouvement::All()->sortByDesc('id');
-        return view('mouvement.forme', compact('categories','camions','Mouvement'));
+        return view('mouvement.index', compact('categories','camions','Mouvement'));
 
     }
     public function details(){
@@ -86,10 +86,7 @@ class MouvementController extends Controller
         $mvtLieu->datecreation=$date;
         $mvtLieu->quantite=$request["quantite"];
         $mvtLieu->save();
-        dd($id);
-
-
-
+        // dd($id);
         return redirect()->route('mouvement.forme');
 
     }
