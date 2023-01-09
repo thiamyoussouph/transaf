@@ -14,7 +14,7 @@ class Mouvement_lieuController extends Controller
     public function index()
     {
         $Mouvement_lieu = Mouvement_lieu::all();
-        return view('mouvement_lieu.index', compact('Mouvement_lieu'));
+        return view('mouvement.mouvementlieu', compact('Mouvement_lieu'));
     }
 
     /**

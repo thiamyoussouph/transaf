@@ -21,7 +21,7 @@ class AdminSeeder extends Seeder
             'first_name'    => 'Super',
             'last_name'     => 'Admin',
             'email'         =>  'admin@admin.com',
-            'telephone' =>  '9028187696',
+            'mobile_number' =>  '9028187696',
             'password'      =>  Hash::make('Admin@123#'),
             'role_id'       => 1
         ]);

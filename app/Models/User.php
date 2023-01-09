@@ -22,11 +22,16 @@ class User extends Authenticatable
         'first_name',
         'last_name',
         'email',
-        'telephone',
+        'mobile_number',
         'role_id',
         'status',
         'password',
     ];
+
+    public function mouvements()
+    {
+        return $this->hasMany(Mouvement::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.

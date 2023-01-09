@@ -11,6 +11,9 @@
 
     <title>{{ config('app.name', 'Laravel') }} | @yield('title')</title>
 
+
+    <link href="{{asset('admin/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
+
     {{-- ICON --}}
     <link rel="shortcut icon" type="image/jpg" href="{{ asset('images/icon.png') }}"/>
 
@@ -24,5 +27,7 @@
     <!-- Custom styles for this template-->
     <link href="{{asset('css/app.css')}}" rel="stylesheet">
     <link href="{{asset('admin/css/sb-admin-2.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 
 </head>
