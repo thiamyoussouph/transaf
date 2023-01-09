@@ -28,26 +28,7 @@
     <hr class="sidebar-divider">
 
     <!-- Heading -->
-    <div class="sidebar-heading">
-        Management
-    </div>
-
-    <!-- Nav Item - Pages Collapse Menu -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#taTpDropDown"
-            aria-expanded="true" aria-controls="taTpDropDown">
-            <i class="fas fa-user-alt"></i>
-            <span>User Management</span>
-        </a>
-        <div id="taTpDropDown" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">User Management:</h6>
-                <a class="collapse-item" href="{{ route('users.index') }}">List</a>
-                <a class="collapse-item" href="{{ route('users.create') }}">Add New</a>
-                <a class="collapse-item" href="{{ route('users.import') }}">Import Data</a>
-            </div>
-        </div>
-    </li>
+    
 
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseT"
@@ -64,24 +45,7 @@
         </div>
     </li>
      <!-- Nav Item - Pages Collapse Menu -->
-     <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Camions</span>
-        </a>
-        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Gestion Camions:</h6>
-                <a class="collapse-item" href="/camion">Lister</a>
-                <a class="collapse-item" href="/camion/create">Ajout</a>
-              
 
-            </div>
-        </div>
-        
-       
-       
-    </li>
 
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwoss" aria-expanded="true" aria-controls="collapseTwoss">
@@ -101,35 +65,8 @@
     </li>
 
 
-    <!-- Nav Item - Utilities Collapse Menu -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilit" aria-expanded="true" aria-controls="collapseUtilit">
-            <i class="fas fa-fw fa-user"></i>
-            <span>Categorie</span>
-        </a>
-        <div id="collapseUtilit" class="collapse" aria-labelledby="headingUtilit" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Gestion Categories:</h6>
-                <a href="/categorie" class="collapse-item">Lister</a>
-            </div>
-        </div>
-    </li>
+    
 
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-            aria-expanded="true" aria-controls="collapseUtilities">
-            <i class="fas fa-fw fa-wrench"></i>
-            <span>Lieux</span>
-        </a>
-        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-            data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Gestion Lieux:</h6>
-                <a href="/lieu" class="collapse-item" >Lister</a>
-                <a href="/lieu/create" class="collapse-item" >Ajout</a>
-            </div>
-        </div>
-    </li>
     <!-- Divider -->
     <hr class="sidebar-divider">
 
@@ -138,6 +75,7 @@
         <div class="sidebar-heading">
             Admin Section
         </div>
+
 
         <!-- Nav Item - Pages Collapse Menu -->
         <li class="nav-item">
@@ -154,6 +92,75 @@
                 </div>
             </div>
         </li>
+
+        <div class="sidebar-heading">
+            Management
+        </div>
+    
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#taTpDropDown"
+                aria-expanded="true" aria-controls="taTpDropDown">
+                <i class="fas fa-user-alt"></i>
+                <span>User Management</span>
+            </a>
+            <div id="taTpDropDown" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">User Management:</h6>
+                    <a class="collapse-item" href="{{ route('users.index') }}">List</a>
+                    <a class="collapse-item" href="{{ route('users.create') }}">Add New</a>
+                    <a class="collapse-item" href="{{ route('users.import') }}">Import Data</a>
+                </div>
+            </div>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                aria-expanded="true" aria-controls="collapseUtilities">
+                <i class="fas fa-fw fa-wrench"></i>
+                <span>Lieux</span>
+            </a>
+            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Gestion Lieux:</h6>
+                    <a href="/lieu" class="collapse-item" >Lister</a>
+                    <a href="/lieu/create" class="collapse-item" >Ajout</a>
+                </div>
+            </div>
+        </li>
+        <!-- Nav Item - Utilities Collapse Menu -->
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilit" aria-expanded="true" aria-controls="collapseUtilit">
+            <i class="fas fa-fw fa-user"></i>
+            <span>Categorie</span>
+        </a>
+        <div id="collapseUtilit" class="collapse" aria-labelledby="headingUtilit" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Gestion Categories:</h6>
+                <a href="/categorie" class="collapse-item">Lister</a>
+            </div>
+        </div>
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Camions</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Gestion Camions:</h6>
+                <a class="collapse-item" href="/camion">Lister</a>
+                <a class="collapse-item" href="/camion/create">Ajout</a>
+              
+
+            </div>
+        </div>
+        
+       
+       
+    </li>
 
         <!-- Divider -->
         <hr class="sidebar-divider d-none d-md-block">

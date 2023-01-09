@@ -37,6 +37,7 @@ Route::resource('roles', App\Http\Controllers\RolesController::class);
 // Permissions
 Route::resource('permissions', App\Http\Controllers\PermissionsController::class);
 
+
 // Users 
 Route::middleware('auth')->prefix('users')->name('users.')->group(function(){
     Route::get('/', [UserController::class, 'index'])->name('index');
@@ -54,6 +55,7 @@ Route::middleware('auth')->prefix('users')->name('users.')->group(function(){
     Route::get('export/', [UserController::class, 'export'])->name('export');
 
 });
+Route::middleware('auth')->group(function(){
 
 Route::get('/camion', [App\Http\Controllers\CamionController::class, 'index'])->name('camion.index');
 Route::get('/camion/create', [App\Http\Controllers\CamionController::class, 'create'])->name('camion.forme');
@@ -61,7 +63,7 @@ Route::post('/ajout', [App\Http\Controllers\CamionController::class, 'store'])->
 Route::get('/camion/{id}', [App\Http\Controllers\CamionController::class, 'show'])->name('camion.detail');
 Route::get('/camion/destroy/{id}', [App\Http\Controllers\CamionController::class, 'destroy'])->name('camion.destroy');
 
-
+});
 Route::get('/lieu', [App\Http\Controllers\LieuController::class, 'index'])->name('lieu.index');
 Route::get('/lieu/create', [App\Http\Controllers\LieuController::class, 'create'])->name('lieu.forme');
 Route::post('/addLieu', [App\Http\Controllers\LieuController::class, 'store'])->name('lieu.store');
