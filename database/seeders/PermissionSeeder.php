@@ -29,6 +29,18 @@ class PermissionSeeder extends Seeder
             'permission-create',
             'permission-edit',
             'permission-delete',
+            'camion-list',
+            'camion-create',
+            'camion-show',
+            'camion-destroy',
+            'lieu-list',
+            'lieu-create',
+            'lieu-show',
+            'lieu-destroy',
+            'categorie-list',
+            'categorie-create',
+            'categorie-show',
+            'categorie-destroy'
         ];
 
         foreach($permissions as $permission){

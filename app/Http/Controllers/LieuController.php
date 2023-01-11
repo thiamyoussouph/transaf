@@ -6,6 +6,22 @@ use Illuminate\Http\Request;
 use App\Models\Lieu;
 class LieuController extends Controller
 {
+
+       /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('permission:lieu-list|lieu-create|lieu-show|lieu-destroy', ['only' => ['index']]);
+        $this->middleware('permission:lieu-create', ['only' => ['create','store']]);
+        $this->middleware('permission:lieu-show', ['only' => ['show']]);
+        $this->middleware('permission:lieu-destroy', ['only' => ['destroy']]);
+    }
+
+
     /**
      * Display a listing of the resource.
      *

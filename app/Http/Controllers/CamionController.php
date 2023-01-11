@@ -7,6 +7,20 @@ use Illuminate\Http\Request;
 
 class CamionController extends Controller
 {
+
+     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('permission:camion-list|camion-create|camion-show|camion-destroy', ['only' => ['index']]);
+        $this->middleware('permission:camion-create', ['only' => ['create','store']]);
+        $this->middleware('permission:camion-show', ['only' => ['show']]);
+        $this->middleware('permission:camion-destroy', ['only' => ['destroy']]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -25,7 +39,7 @@ class CamionController extends Controller
      */
     public function create()
     {
-        return view('camion.forme',);
+        return view('camion.create',);
     }
 
     /**

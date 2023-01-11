@@ -124,8 +124,8 @@
                 data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Gestion Lieux:</h6>
-                    <a href="/lieu" class="collapse-item" >Lister</a>
-                    <a href="/lieu/create" class="collapse-item" >Ajout</a>
+                    <a href="{{ route('lieu.index') }}" class="collapse-item" >Lister</a>
+                    <a href="{{ route('lieu.create') }}" class="collapse-item" >Ajout</a>
                 </div>
             </div>
         </li>
@@ -138,7 +138,7 @@
         <div id="collapseUtilit" class="collapse" aria-labelledby="headingUtilit" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Gestion Categories:</h6>
-                <a href="/categorie" class="collapse-item">Lister</a>
+                <a href="{{ route('categorie.index') }}" class="collapse-item">Lister</a>
             </div>
         </div>
     </li>
@@ -151,8 +151,8 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Gestion Camions:</h6>
-                <a class="collapse-item" href="/camion">Lister</a>
-                <a class="collapse-item" href="/camion/create">Ajout</a>
+                <a class="collapse-item" href="{{ route('camion.index') }}">Lister</a>
+                <a class="collapse-item" href="{{ route('camion.create') }}">Ajout</a>
               
 
             </div>

@@ -7,6 +7,20 @@ use App\Models\Categorie;
 
 class CategorieController extends Controller
 {
+
+       /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('permission:categorie-list|categorie-create|categorie-show|categorie-destroy', ['only' => ['index']]);
+        $this->middleware('permission:categorie-create', ['only' => ['create','store']]);
+        $this->middleware('permission:categorie-show', ['only' => ['show']]);
+        $this->middleware('permission:categorie-destroy', ['only' => ['destroy']]);
+    }
     /**
      * Display a listing of the resource.
      *
