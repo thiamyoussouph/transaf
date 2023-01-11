@@ -1,72 +1,13 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    {{-- <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center  " href="{{ route('home') }}">
         <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-university"></i>
+            <img class="rounded-circle" src="{{asset('admin/img/photo.jpeg')}}" alt="" srcset="" height="50" width="50">
         </div>
-        <div class="sidebar-brand-text mx-3">Tech-Admin</div>
-    </a> --}}
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-       
-        <div class="sidebar-brand-text  ">
-            <img class="rounded-circle" src="{{asset('admin/img/photo.jpeg')}}" alt="" srcset="" height="70" width="50">
-        </div>
-    </a>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider my-0">
-
-    <!-- Nav Item - Dashboard -->
-    <li class="nav-item active">
-        <a class="nav-link" href="{{ route('home') }}">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
-    </li>
-
-    <!-- Divider -->
-    <hr class="sidebar-divider">
-
-    <!-- Heading -->
-    
-
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseT"
-            aria-expanded="true" aria-controls="collapseT">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>Chargement</span>
-        </a>
-        <div id="collapseT" class="collapse" aria-labelledby="headingT" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Gestion des mouvements:</h6>
-                <a class="collapse-item" href="/mouvement">Lister</a>
-                <a class="collapse-item" href="/mouvement/create">Ajout</a>
-            </div>
-        </div>
-    </li>
-     <!-- Nav Item - Pages Collapse Menu -->
-
-
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwoss" aria-expanded="true" aria-controls="collapseTwoss">
-            <i class="fas fa-fw fa-wa"></i>
-            <span>mouvements</span>
-        </a>
-        <div id="collapseTwoss" class="collapse" aria-labelledby="headingTwoss" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Gestion chargement:</h6>
-                <a class="collapse-item" href="/camion">Lister</a>
-                <a class="collapse-item" href="{{('register')}}">Ajout</a>
-              
-
-            </div>
-        </div>
-
-    </li>
-
-
-    
-
+        <div class="sidebar-brand-text mx-1 ">TransAfrica</div>
+    </a> 
+   
     <!-- Divider -->
     <hr class="sidebar-divider">
 
@@ -166,6 +107,39 @@
         <hr class="sidebar-divider d-none d-md-block">
     @endhasrole
 
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseT"
+            aria-expanded="true" aria-controls="collapseT">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Chargement</span>
+        </a>
+        <div id="collapseT" class="collapse" aria-labelledby="headingT" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Gestion des mouvements:</h6>
+                <a class="collapse-item" href="/mouvement">Lister</a>
+                <a class="collapse-item" href="/mouvement/create">Ajout</a>
+            </div>
+        </div>
+    </li>
+     <!-- Nav Item - Pages Collapse Menu -->
+
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwoss" aria-expanded="true" aria-controls="collapseTwoss">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>mouvements</span>
+        </a>
+        <div id="collapseTwoss" class="collapse" aria-labelledby="headingTwoss" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Gestion chargement:</h6>
+                <a class="collapse-item" href="/camion">Lister</a>
+                <a class="collapse-item" href="{{('register')}}">Ajout</a>
+              
+
+            </div>
+        </div>
+
+    </li>
     <li class="nav-item">
         <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
             <i class="fas fa-sign-out-alt"></i>
