@@ -20,10 +20,8 @@ class MouvementController extends Controller
      */
     public function index()
     {
-        $Mouvement = Mouvement::all();
-        $categories = Categorie::all();
-        $camions = Camion::all();
-        return view('mouvement.index', compact('Mouvement'));
+        $mouvements = Mouvement::all();
+        return view('mouvement.mouvementlieu', compact('mouvements'));
 
     }
 
@@ -66,7 +64,7 @@ class MouvementController extends Controller
     public function store(Request $request)
     {
         $mouvement=new Mouvement();
-        $mvtLieu=new Mouvement_lieu();
+      
         $date = str_replace(' ','_',Carbon::now()->toDateTimeString());
         $mvt="Mvt_";
         $camion=Camion::find($request["camion_id"]);
@@ -75,29 +73,27 @@ class MouvementController extends Controller
         $mouvement->categorie_id=$request["categorie_id"];
         $mouvement->description=$request["description"];
         $mouvement->camion_id=$request["camion_id"];
-        $mouvement->user_id=$request["user_id"];
+        $mouvement->user_idchargement=$request["user_id"];
+        $mouvement->quantitecharger=$request["quantite"];
+        $mouvement->lieuchargement_id=1;
+        
         $mouvement->save();
-        $id=$mouvement->id;
-        $mvtLieu->mouvement_id=$id;
-        $mvtLieu->lieu_id=1;
-        $mvtLieu->datecreation=$date;
-        $mvtLieu->quantite=$request["quantite"];
-        $mvtLieu->save();
-        dd($id);
+        
+        
+       
         return redirect()->route('mouvement.index');
     }
     public function decharger(Request $request)
     {
-        $mvtLieu=new Mouvement_lieu();
+      
         $date = Carbon::now()->toDateTimeString();
         $mouvement = Mouvement::find($request["mouvement"]);
         $mouvement->decharger=true;
+        $mouvement->user_iddechargement=$request["user_id"];
+        $mouvement->quantitedecharger=$request["quantite"];
+        $mouvement->lieudechargement_id=2;
         $mouvement->save();
-        $mvtLieu->mouvement_id=$request["mouvement"];
-        $mvtLieu->lieu_id=2;
-        $mvtLieu->datecreation=$date;
-        $mvtLieu->quantite=$request["quantite"];
-        $mvtLieu->save();
+   
         return redirect()->route('mouvement.index');
     }
 

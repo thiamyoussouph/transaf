@@ -18,12 +18,20 @@ return new class extends Migration
             $table->string('numeromouvement');
             $table->string('description');
             $table->boolean('decharger')->default(false);
+            $table->double('quantitecharger');
+            $table->double('quantitedecharger')->nullable();
+            $table->unsignedBigInteger('lieuchargement_id');
+            $table->unsignedBigInteger('lieudechargement_id')->nullable();
             $table->unsignedBigInteger('categorie_id');
             $table->unsignedBigInteger('camion_id');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('user_idchargement');
+            $table->unsignedBigInteger('user_iddechargement')->nullable();
             $table->foreign('categorie_id')->references('id')->on('categories');
             $table->foreign('camion_id')->references('id')->on('camions');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_idchargement')->references('id')->on('users');
+            $table->foreign('user_iddechargement')->references('id')->on('users');
+            $table->foreign('lieuchargement_id')->references('id')->on('lieus');
+            $table->foreign('lieudechargement_id')->references('id')->on('lieus');
             $table->timestamps();
         });
     }

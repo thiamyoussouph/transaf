@@ -12,12 +12,16 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th scope="col">numeromouvement</th>
-                                <th scope="col">Tonne</th>
-                                <th scope="col">lieux</th>
-                                <th scope="col">Categorie</th>
-                                <th scope="col">date enregistrement</th>
-                                <th scope="col">responsable</th>
+                                <th scope="col">°mouvement</th>
+                                <th scope="col">qt charger</th>
+                                <th scope="col">date erg</th>
+                                <th scope="col">lieu chg</th>
+                                <th scope="col">res char</th>
+                                <th scope="col">qt decharger</th>
+                                <th scope="col">date dch</th>
+                                <th scope="col">lieu dhg</th>
+
+                                <th scope="col">res dech</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
@@ -32,16 +36,19 @@
                     </tr>
                 </tfoot> --}}
                         <tbody>
-                            @foreach ( $Mouvement_lieu as $mouvement_lieu)
+                            @foreach ( $mouvements as $mouvement)
                             <tr>
-                            <td>{{$mouvement_lieu->mouvement->numeromouvement}}</td>
-                                <td>{{$mouvement_lieu->quantite}}</td>
-                                <td>{{$mouvement_lieu->lieu->libelle}}</td>
-                                <td>{{$mouvement_lieu->mouvement->categorie->libelle}}</td>
-                                <td>{{$mouvement_lieu->mouvement->created_at}}</td>
-                                <td>{{$mouvement_lieu->mouvement->user->name}}</td>
-                                
-                                
+                                <td>{{$mouvement->numeromouvement}}</td>
+                                <td>{{$mouvement->quantitecharger}}</td>
+                                <td>{{$mouvement->camion->matricule}}</td>
+                                <td>{{$mouvement->created_at}}</td>
+                                <td>mine</td>
+                                <td>{{$mouvement->user_idchargement}}</td>
+                                <td>{{$mouvement->quantitedecharger}}</td>
+                                <td>{{$mouvement->updated_at}}</td>
+                                <td>base</td>
+                                <td>{{$mouvement->user_iddechargement}}</td>
+                                <td>{{$mouvement->categorie->libelle}}</td>
                                 <td>
                                     {{-- <a href="#"><i class="bi bi-plus-circle" style="color: #03ECC7;"></i></a> --}}
                                     <a href="#"><i class="bi bi-pencil-square" style="color:#FFEF00;"></i></a>
