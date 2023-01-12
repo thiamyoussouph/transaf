@@ -2,7 +2,7 @@
 
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-       
+
         <div class="sidebar-brand-text  ">
             <img class="rounded-circle" src="{{asset('admin/img/photo.jpeg')}}" alt="" srcset="" height="70" width="50">
         </div>
@@ -52,16 +52,16 @@
                 <h6 class="collapse-header">Gestion Camions:</h6>
                 <a class="collapse-item" href="/camion">Lister</a>
                 <a class="collapse-item" href="/camion/create">Ajout</a>
-              
+
 
             </div>
         </div>
-        
-       
-       
+
+
+
     </li>
-   
-    <li class="nav-item">
+
+    {{-- <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwos" aria-expanded="true" aria-controls="collapseTwos">
             <i class="fas fa-fw fa-cog"></i>
             <span>utilisateur</span>
@@ -71,23 +71,23 @@
                 <h6 class="collapse-header">Gestion utilisateur:</h6>
                 <a class="collapse-item" href="">Lister</a>
                 <a class="collapse-item" href="">Ajout</a>
-              
+
 
             </div>
         </div>
 
-    </li>
+    </li> --}}
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwoss" aria-expanded="true" aria-controls="collapseTwoss">
             <i class="fas fa-fw fa-wa"></i>
-            <span>mouvements</span>
+            <span>Chauffeurs</span>
         </a>
         <div id="collapseTwoss" class="collapse" aria-labelledby="headingTwoss" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Gestion chargement:</h6>
-                <a class="collapse-item" href="/camion">Lister</a>
-                <a class="collapse-item" href="{{('register')}}">Ajout</a>
-              
+                <h6 class="collapse-header">Gestion Chauffeurs:</h6>
+                <a class="collapse-item" href="/chauffeur">Lister</a>
+                <a class="collapse-item" href="/chauffeur/create">Ajout</a>
+
 
             </div>
         </div>

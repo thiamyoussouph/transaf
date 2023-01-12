@@ -5,7 +5,7 @@
 <div class="col-md-6">
     <div class="card">
         <div class="card-header ">
-            <h3 class="card-title m-0">Ajoute chauffeur</h3>
+            <h3 class="card-title m-0">Ajouter chauffeur</h3>
         </div>
         <div class="card-body">
             @if($errors->any())
@@ -15,7 +15,7 @@
             </div>
             @endforeach
             @endif
-            
+
             <form action="{{route('chauffeur.store')}}" method="POST">
                 @csrf
                 <div class="mb-3">
