@@ -12,14 +12,18 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th scope="col">°mouvement</th>
+                                <th scope="col">N°mouvement</th>
                                 <th scope="col">qt charger</th>
                                 <th scope="col">date erg</th>
-                                <th scope="col">lieu chg</th>
+
                                 <th scope="col">res char</th>
-                                <th scope="col">qt decharger</th>
+                                <th scope="col">mt camion</th>
+                               
                                 <th scope="col">date dch</th>
-                                <th scope="col">lieu dhg</th>
+                                <th scope="col">qt decharger</th>
+                                <th scope="col">date dchrd</th>
+                     
+
 
                                 <th scope="col">res dech</th>
                                 <th scope="col">Action</th>
@@ -39,17 +43,22 @@
                             @foreach ( $mouvements as $mouvement)
                             <tr>
                                 <td>{{$mouvement->numeromouvement}}</td>
-                                <td>{{$mouvement->quantitecharger}}</td>
+                                <td>{{$mouvement->chargement->quantite}}</td>
+                                <td>{{$mouvement->created_at}}</td>
+                                <td>{{$mouvement->chargement->user->name}}</td>
                                 <td>{{$mouvement->camion->matricule}}</td>
                                 <td>{{$mouvement->created_at}}</td>
-                                <td>mine</td>
-                                <td>{{$mouvement->user_idchargement}}</td>
-                                <td>{{$mouvement->quantitedecharger}}</td>
+                                @if($mouvement->decharger==false)
+                                <td style="color: #E40000;">encour</td>
+                                <td style="color: #E40000;">encour</td>
+                                <td style="color: #E40000;">pas decharger</td>
+                                @else
+                               
+                                <td>{{$mouvement->dechargement->quantite}}</td>
                                 <td>{{$mouvement->updated_at}}</td>
-                                <td>base</td>
-                                <td>{{$mouvement->user_iddechargement}}</td>
-                                <td>{{$mouvement->categorie->libelle}}</td>
-                                <td>
+                                <td>{{$mouvement->dechargement->user->name}}
+                                @endif
+<td>
                                     {{-- <a href="#"><i class="bi bi-plus-circle" style="color: #03ECC7;"></i></a> --}}
                                     <a href="#"><i class="bi bi-pencil-square" style="color:#FFEF00;"></i></a>
                                     <a href=""> <i class="bi bi-x-circle" style="color:#E40000;"></i></a>
