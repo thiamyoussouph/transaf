@@ -4,7 +4,7 @@
     <div class="col-md-10">
         <div class="card">
             <div class="card-header ">
-                <h3 class="card-title m-0">Ajoute mouvement</h3>
+                <h3 class="card-title m-0">Ajouter mouvement</h3>
             </div>
             <div class="card-body">
                 <form action="{{ route('mouvement.store') }}" method="POST">
