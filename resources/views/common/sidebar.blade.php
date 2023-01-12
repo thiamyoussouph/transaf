@@ -66,7 +66,7 @@
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Gestion Lieux:</h6>
                     <a href="{{ route('lieu.index') }}" class="collapse-item" >Lister</a>
-                    <a href="{{ route('lieu.create') }}" class="collapse-item" >Ajout</a>
+                    {{-- <a href="{{ route('lieu.create') }}" class="collapse-item" >Ajout</a> --}}
                 </div>
             </div>
         </li>
@@ -93,14 +93,23 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Gestion Camions:</h6>
                 <a class="collapse-item" href="{{ route('camion.index') }}">Lister</a>
-                <a class="collapse-item" href="{{ route('camion.create') }}">Ajout</a>
-              
-
+                <a class="collapse-item" href="{{ route('camion.forme') }}">Ajout</a>
             </div>
         </div>
-        
-       
-       
+    </li>
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>chauffeurs</span>
+        </a>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Gestion chauffeurs:</h6>
+                <a class="collapse-item" href="{{ route('chauffeur.index') }}">Lister</a>
+                <a class="collapse-item" href="{{ route('chauffeur.forme') }}">Ajout</a>
+            </div>
+        </div>
     </li>
 
         <!-- Divider -->
@@ -116,30 +125,19 @@
         <div id="collapseT" class="collapse" aria-labelledby="headingT" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Gestion des mouvements:</h6>
-                <a class="collapse-item" href="/mouvement">Lister</a>
-                <a class="collapse-item" href="/mouvement/create">Ajout</a>
+                <a class="collapse-item" href="{{ route('mouvement.index') }}">Lister</a>
+                <a class="collapse-item" href="{{ route('mouvement.forme') }}">Ajout</a>
+                <a class="collapse-item" href="{{ route('mouvement.formeDecharger') }}">Ajout</a>
+                <a class="collapse-item" href="{{ route('mouvement.store.decharge') }}">Ajout</a>
+
+
             </div>
         </div>
     </li>
      <!-- Nav Item - Pages Collapse Menu -->
 
 
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwoss" aria-expanded="true" aria-controls="collapseTwoss">
-            <i class="fas fa-fw fa-cog"></i>
-            <span>mouvements</span>
-        </a>
-        <div id="collapseTwoss" class="collapse" aria-labelledby="headingTwoss" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Gestion chargement:</h6>
-                <a class="collapse-item" href="/camion">Lister</a>
-                <a class="collapse-item" href="{{('register')}}">Ajout</a>
-              
-
-            </div>
-        </div>
-
-    </li>
+   
     <li class="nav-item">
         <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
             <i class="fas fa-sign-out-alt"></i>

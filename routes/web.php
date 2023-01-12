@@ -65,8 +65,8 @@ Route::middleware('auth')->prefix('users')->name('users.')->group(function(){
 Route::middleware('auth')->prefix('camion')->name('camion.')->group(function(){
 
 Route::get('/', [CamionController::class, 'index'])->name('index');
-Route::get('/create', [CamionController::class,  'create'])->name('create');
-Route::post('/ajout', [CamionController::class,  'store'])->name('store');
+Route::get('/create', [CamionController::class,  'create'])->name('forme');
+Route::post('/addCamion', [CamionController::class,  'store'])->name('store');
 Route::get('/{id}', [CamionController::class,  'show'])->name('detail');
 Route::get('/destroy/{id}', [CamionController::class,  'destroy'])->name('destroy');
 
@@ -89,13 +89,13 @@ Route::get('/destroy/{id}', [CategorieController::class, 'destroy'])->name('dest
 //Route Mouvement
 
 Route::middleware('auth')->prefix('mouvement')->name('mouvement.')->group(function(){
-Route::get('/', [MouvementController::class, 'index'])->name('index');
-Route::get('/create', [MouvementController::class, 'create'])->name('forme');
-Route::get('/create/decharger', [MouvementController::class, 'createDecharge'])->name('formeDecharger');
-Route::post('/mouvementadd', [MouvementController::class,'store'])->name('store');
-Route::post('/mouvementadddecharge', [MouvementController::class, 'decharger'])->name('store.decharge');
-Route::get('/destroy/{id}', [MouvementController::class,'destroy'])->name('destroy');
-Route::get('/details', [MouvementController::class, 'details'])->name('details');
+    Route::get('/', [MouvementController::class, 'index'])->name('index');
+    Route::get('/create', [MouvementController::class, 'create'])->name('forme');
+    Route::get('/create/decharger', [MouvementController::class, 'createDecharge'])->name('formeDecharger');
+    Route::post('/mouvementadd', [MouvementController::class, 'store'])->name('store');
+    Route::post('/mouvementadddecharge', [MouvementController::class, 'decharger'])->name('store.decharge');
+    Route::get('/destroy/{id}', [MouvementController::class, 'destroy'])->name('destroy');
+    Route::get('/details', [MouvementController::class, 'details'])->name('details');
 });
 // Route Mouvement_lieu
 

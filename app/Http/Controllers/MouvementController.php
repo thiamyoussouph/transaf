@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Mouvement;
 use App\Models\User;
 use App\Models\Categorie;
+use App\Models\chargement;
+use App\Models\dechargement;
 use App\Models\Mouvement_lieu;
 use Illuminate\Support\Facades\DB;
 
@@ -20,10 +22,8 @@ class MouvementController extends Controller
      */
     public function index()
     {
-        $Mouvement = Mouvement::all();
-        $categories = Categorie::all();
-        $camions = Camion::all();
-        return view('mouvement.index', compact('Mouvement'));
+        $mouvements = Mouvement::all();
+        return view('mouvement.mouvementlieu', compact('mouvements'));
 
     }
 
@@ -66,38 +66,43 @@ class MouvementController extends Controller
     public function store(Request $request)
     {
         $mouvement=new Mouvement();
-        $mvtLieu=new Mouvement_lieu();
+       $chargements=new chargement();
+       $dechargements=new dechargement();
+     
         $date = str_replace(' ','_',Carbon::now()->toDateTimeString());
         $mvt="Mvt_";
         $camion=Camion::find($request["camion_id"]);
         //dd($mvt.$camion->matricule."_".$date);
+        $chargements->user_id=$request["user_id"];
+        $chargements->quantite=$request["quantite"];
+        $chargements->save();
+        $dechargements->quantite=0;
+        $dechargements->save();
         $mouvement->numeromouvement=$mvt.$camion->matricule."_".$date;
         $mouvement->categorie_id=$request["categorie_id"];
         $mouvement->description=$request["description"];
         $mouvement->camion_id=$request["camion_id"];
-        $mouvement->user_id=$request["user_id"];
+        $mouvement->lieu_id=1;
+        $mouvement->chargement_id=$chargements->id;
+        $mouvement->decharger=false;
         $mouvement->save();
-        $id=$mouvement->id;
-        $mvtLieu->mouvement_id=$id;
-        $mvtLieu->lieu_id=1;
-        $mvtLieu->datecreation=$date;
-        $mvtLieu->quantite=$request["quantite"];
-        $mvtLieu->save();
-        dd($id);
+        
+        
+       
         return redirect()->route('mouvement.index');
     }
     public function decharger(Request $request)
     {
-        $mvtLieu=new Mouvement_lieu();
-        $date = Carbon::now()->toDateTimeString();
+        $dechargements=new dechargement();
+      $dechargements->user_id=$request["user_id"];
+        $dechargements->quantite=$request["quantite"];
+        $dechargements->save();
         $mouvement = Mouvement::find($request["mouvement"]);
         $mouvement->decharger=true;
+        $mouvement->dechargement_id=$dechargements->id;
+        $mouvement->lieu_id=2;
         $mouvement->save();
-        $mvtLieu->mouvement_id=$request["mouvement"];
-        $mvtLieu->lieu_id=2;
-        $mvtLieu->datecreation=$date;
-        $mvtLieu->quantite=$request["quantite"];
-        $mvtLieu->save();
+   
         return redirect()->route('mouvement.index');
     }
 

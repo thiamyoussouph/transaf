@@ -60,7 +60,7 @@
                     </div>
                     @endforeach
                     @endif
-                    <form action="/add" method="POST" >
+                    <form action="{{route('categorie.store')}}" method="POST" >
                         @csrf
                             <div class="mb-3">
                                  <label for="matricule" class="form-label">Libelle</label>

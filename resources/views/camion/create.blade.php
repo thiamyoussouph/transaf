@@ -16,7 +16,7 @@
                 </div>
                 @endforeach
                 @endif
-                    <form action="{{route('camion.store')}}" method="POST">
+                    <form action="{{route('camion.store')}}"  method="POST">
                         @csrf
                         <div class="mb-3">
                             <label for="matricule" class="form-label">Matricule</label>

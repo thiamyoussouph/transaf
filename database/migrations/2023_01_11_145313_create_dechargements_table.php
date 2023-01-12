@@ -13,10 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('lieus', function (Blueprint $table) {
+        Schema::create('dechargements', function (Blueprint $table) {
             $table->id();
-            $table->string('libelle')->unique();
-      $table->timestamps();
+            $table->double('quantite');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+          
+            $table->timestamps();
         });
     }
 
@@ -27,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lieus');
+        Schema::dropIfExists('dechargements');
     }
 };
