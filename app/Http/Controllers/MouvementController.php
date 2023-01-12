@@ -77,6 +77,7 @@ class MouvementController extends Controller
         $chargements->quantite=$request["quantite"];
         $chargements->save();
         $dechargements->quantite=0;
+        $dechargements->user_id=1;
         $dechargements->save();
         $mouvement->numeromouvement=$mvt.$camion->matricule."_".$date;
         $mouvement->categorie_id=$request["categorie_id"];
