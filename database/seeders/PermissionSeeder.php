@@ -40,7 +40,11 @@ class PermissionSeeder extends Seeder
             'categorie-list',
             'categorie-create',
             'categorie-show',
-            'categorie-destroy'
+            'categorie-destroy',
+            'chauffeur-list',
+            'chauffeur-create',
+            'chauffeur-show',
+            'chauffeur-destroy'
         ];
 
         foreach($permissions as $permission){
@@ -59,5 +63,7 @@ class PermissionSeeder extends Seeder
         // Admin Role Sync Permission
         $user = User::where('role_id', 1)->first();
         $user->assignRole($role->id);
+
+        
     }
 }

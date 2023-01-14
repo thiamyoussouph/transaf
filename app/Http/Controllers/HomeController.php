@@ -35,7 +35,6 @@ class HomeController extends Controller
      * User Profile
      * @param Nill
      * @return View Profile
-     * @author Shani Singh
      */
     public function getProfile()
     {
@@ -46,7 +45,6 @@ class HomeController extends Controller
      * Update Profile
      * @param $profileData
      * @return Boolean With Success Message
-     * @author Shani Singh
      */
     public function updateProfile(Request $request)
     {
@@ -54,7 +52,7 @@ class HomeController extends Controller
         $request->validate([
             'first_name'    => 'required',
             'last_name'     => 'required',
-            'mobile_number' => 'required|numeric|digits:10',
+            'mobile_number' => 'required|numeric|digits:9',
         ]);
 
         try {
@@ -83,7 +81,6 @@ class HomeController extends Controller
      * Change Password
      * @param Old Password, New Password, Confirm New Password
      * @return Boolean With Success Message
-     * @author Shani Singh
      */
     public function changePassword(Request $request)
     {

@@ -12,27 +12,7 @@
     <hr class="sidebar-divider">
 
     @hasrole('Admin')
-        <!-- Heading -->
-        <div class="sidebar-heading">
-            Admin Section
-        </div>
-
-
-        <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
-                aria-expanded="true" aria-controls="collapsePages">
-                <i class="fas fa-fw fa-folder"></i>
-                <span>Masters</span>
-            </a>
-            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Role & Permissions</h6>
-                    <a class="collapse-item" href="{{ route('roles.index') }}">Roles</a>
-                    <a class="collapse-item" href="{{ route('permissions.index') }}">Permissions</a>
-                </div>
-            </div>
-        </li>
+       
 
         <div class="sidebar-heading">
             Management
@@ -97,7 +77,6 @@
             </div>
         </div>
     </li>
-
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
             <i class="fas fa-fw fa-cog"></i>
@@ -112,10 +91,6 @@
         </div>
     </li>
 
-        <!-- Divider -->
-        <hr class="sidebar-divider d-none d-md-block">
-    @endhasrole
-
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseT"
             aria-expanded="true" aria-controls="collapseT">
@@ -126,14 +101,77 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Gestion des mouvements:</h6>
                 <a class="collapse-item" href="{{ route('mouvement.index') }}">Lister</a>
-                <a class="collapse-item" href="{{ route('mouvement.forme') }}">Ajout</a>
-                <a class="collapse-item" href="{{ route('mouvement.formeDecharger') }}">Ajout</a>
-                <a class="collapse-item" href="{{ route('mouvement.store.decharge') }}">Ajout</a>
+                <a class="collapse-item" href="{{ route('mouvement.forme') }}">Ajouter Chargement</a>
+                <a class="collapse-item" href="{{ route('mouvement.formeDecharger') }}">Ajouter Déchargement</a>
 
 
             </div>
         </div>
     </li>
+
+     <!-- Heading -->
+ <div class="sidebar-heading">
+    Admin Section
+</div>
+        
+        <!-- Nav Item - Pages Collapse Menu -->
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
+                aria-expanded="true" aria-controls="collapsePages">
+                <i class="fas fa-fw fa-folder"></i>
+                <span>Masters</span>
+            </a>
+            <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+                <div class="bg-white py-2 collapse-inner rounded">
+                    <h6 class="collapse-header">Role & Permissions</h6>
+                    <a class="collapse-item" href="{{ route('roles.index') }}">Roles</a>
+                    <a class="collapse-item" href="{{ route('permissions.index') }}">Permissions</a>
+                </div>
+            </div>
+        </li>
+    @endhasrole
+    
+    @hasrole('Dechargement')
+ 
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseT"
+            aria-expanded="true" aria-controls="collapseT">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Chargement</span>
+        </a>
+        <div id="collapseT" class="collapse" aria-labelledby="headingT" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Gestion des mouvements:</h6>
+                <a class="collapse-item" href="{{ route('mouvement.store.decharge') }}">Ajouter Déchargement</a>
+
+
+            </div>
+        </div>
+    </li>
+        <!-- Divider -->
+        <hr class="sidebar-divider d-none d-md-block">
+    @endhasrole
+    
+
+    @hasrole('Chargement')
+
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseT"
+            aria-expanded="true" aria-controls="collapseT">
+            <i class="fas fa-fw fa-cog"></i>
+            <span>Chargement</span>
+        </a>
+        <div id="collapseT" class="collapse" aria-labelledby="headingT" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+                <h6 class="collapse-header">Gestion des mouvements:</h6>
+                <a class="collapse-item" href="{{ route('mouvement.forme') }}">Ajouter Chargement</a>
+                
+
+
+            </div>
+        </div>
+    </li>
+    @endhasrole
      <!-- Nav Item - Pages Collapse Menu -->
 
 

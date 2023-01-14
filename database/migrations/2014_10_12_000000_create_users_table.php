@@ -27,7 +27,7 @@ class CreateUsersTable extends Migration
             $table->timestamps();
         });
     }
-
+    // ('1=Admin, 2=Chargement, 3=Dechargement');
     /**
      * Reverse the migrations.
      *
