@@ -116,7 +116,7 @@ Route::get('/destroy/{id}', [ChauffeurController::class, 'destroy'])->name('dest
 //Route Chauffeur_Camion
 Route::middleware('auth')->prefix('chauffeur_Camion')->name('chauffeur_Camion.')->group(function(){
 Route::get('/', [chauffeur_CammionController::class, 'index'])->name('index');
-Route::get('/create', [chauffeur_CammionController::class, 'create'])->name('forme');
+Route::get('/create', [chauffeur_CammionController::class, 'create'])->name('create');
 Route::post('/chauffeur_Camionadd', [chauffeur_CammionController::class, 'store'])->name('store');
 Route::get('/destroy/{id}',  [chauffeur_CammionController::class, 'destroy'])->name('destroy');
 });

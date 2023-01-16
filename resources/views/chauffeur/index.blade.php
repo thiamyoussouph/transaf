@@ -1,14 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-
-<table class="table table-info table-striped">
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h4 class="m-0 font-weight-bold text-primary">Liste Des Chauffeurs</h4>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
         <tr>
-            <th scope="col">nom</th>
-            <th scope="col">prenom</th>
-            <th scope="col">adress</th>
-            <th scope="col">telephone</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Prénom</th>
+            <th scope="col">Adresse</th>
+            <th scope="col">Téléphone</th>
             <th scope="col">Action</th>
         </tr>
     </thead>
@@ -29,6 +34,9 @@
         @endforeach
     </tbody>
 </table>
+</div>
+</div>
+</div>
 
 
 @endsection

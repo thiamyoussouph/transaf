@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Chauffeur_camion;
+use Carbon\Carbon;
+use App\Models\Camion;
+use App\Models\Chauffeur;
 use Illuminate\Http\Request;
-use App\Models\chauffeur_Cammion;
+use App\Models\Chauffeur_camion;
+
 class chauffeur_CammionController extends Controller
 {
     /**
@@ -15,7 +18,7 @@ class chauffeur_CammionController extends Controller
     public function index()
     {
         $chauffeur_Cammions = Chauffeur_camion::all();
-        return view('chauffeur_Cammion.index', compact('chauffeur_Cammions'));
+        return view('chauffeur_Camion.index', compact('chauffeur_Cammions'));
     }
 
     /**
@@ -25,7 +28,10 @@ class chauffeur_CammionController extends Controller
      */
     public function create()
     {
-        return view('chauffeur_Cammion.forme',);
+        $chauffeurs = Chauffeur::all();
+        $camions=Camion::all();
+        $chauffeur_Cammions= Chauffeur_camion::All()->sortByDesc('id');
+        return view('chauffeur_Camion.create', compact('chauffeurs','camions','chauffeur_Cammions'));
     }
 
     /**
@@ -36,8 +42,12 @@ class chauffeur_CammionController extends Controller
      */
     public function store(Request $request)
     {
-        Chauffeur_camion::create($request->all());
-        return redirect()->route('chauffeur_Cammion.index');
+        $chauffeur_Cammion=new Chauffeur_camion();
+    
+        $chauffeur_Cammion->chauffeur_id=$request["chauffeur_id"];
+         $chauffeur_Cammion->camion_id=$request["camion_id"];
+         $chauffeur_Cammion->save();
+        return redirect()->route('chauffeur_Camion.index');
     }
 
     /**
@@ -50,7 +60,7 @@ class chauffeur_CammionController extends Controller
     {
                 
                 $chauffeur_Cammion = Chauffeur_camion::find($id);
-                return view('chauffeur_Cammion.detail', ['chauffeur_Cammion' => $chauffeur_Cammion]);
+                return view('chauffeur_Camion.detail', ['chauffeur_Cammion' => $chauffeur_Cammion]);
     }
 
     /**
@@ -62,7 +72,7 @@ class chauffeur_CammionController extends Controller
     public function edit($id)
     {
         $chauffeur_Cammion = Chauffeur_camion::find($id);
-        return view('chauffeur_Cammion.forme', ['chauffeur_Cammion' => $chauffeur_Cammion]);
+        return view('chauffeur_Camion.create', ['chauffeur_Cammion' => $chauffeur_Cammion]);
     }
 
     /**
@@ -75,7 +85,7 @@ class chauffeur_CammionController extends Controller
     public function update(Request $request, $id)
     {
         Chauffeur_camion::find($id)->update($request->all());
-        return redirect()->route('chauffeur_Cammion.index');
+        return redirect()->route('chauffeur_Camion.index');
     }
 
     /**
@@ -87,6 +97,6 @@ class chauffeur_CammionController extends Controller
     public function destroy($id)
     {
         Chauffeur_camion::find($id)->delete();
-        return redirect()->route('chauffeur_Cammion.index');
+        return redirect()->route('chauffeur_Camion.index');
     }
 }

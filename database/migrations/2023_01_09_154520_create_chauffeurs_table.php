@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('prenom');
             $table->string('telephone')->unique();
             $table->string('adresse')->unique();
-            $table->string('Cni')->unique();
+            $table->string('CIN')->unique();
             $table->timestamps();
         });
     }

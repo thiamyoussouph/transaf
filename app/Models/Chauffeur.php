@@ -13,7 +13,7 @@ class Chauffeur extends Model
         'nom',
         'prenom',
         'telephone',
-        'CNI',
+        'CIN',
         'adresse'
     ];
     public function chauffeur_camions()

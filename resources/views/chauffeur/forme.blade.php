@@ -2,10 +2,10 @@
 
 @section('content')
 
-<div class="col-md-6">
+<div class="col-md-8">
     <div class="card">
         <div class="card-header ">
-            <h3 class="card-title m-0">Ajoute chauffeur</h3>
+            <h3 class="card-title m-0">Ajouter Un chauffeur</h3>
         </div>
         <div class="card-body">
             @if($errors->any())
@@ -18,24 +18,24 @@
             
             <form action="{{route('chauffeur.store')}}" method="POST">
                 @csrf
-                <div class="mb-3">
-                    <label for="nom" class="form-label">nom</label>
+                <div class="mb-1">
+                    <label for="nom" class="form-label">Nom</label>
                     <input type="text" class="form-control" id="nom" name="nom">
                 </div>
-                <div class="mb-3">
-                    <label for="prenom" class="form-label">prenom</label>
+                <div class="mb-1">
+                    <label for="prenom" class="form-label">Prenom</label>
                     <input type="text" class="form-control" id="prenom" name="prenom">
                 </div>
-                <div class="mb-3">
-                    <label for="telephone" class="form-label">telephone</label>
+                <div class="mb-1">
+                    <label for="telephone" class="form-label">Téléphone</label>
                     <input type="text" class="form-control" id="telephone" name="telephone">
                 </div>
-                <div class="mb-3">
-                    <label for="CNI" class="form-label">CNI</label>
-                    <input type="text" class="form-control" id="CNI" name="CNI">
+                <div class="mb-1">
+                    <label for="CIN" class="form-label">Carte D'Identité National</label>
+                    <input type="text" class="form-control" id="CIN" name="CIN">
                 </div>
-                <div class="mb-3">
-                    <label for="adresse" class="form-label">adresse</label>
+                <div class="mb-1">
+                    <label for="adresse" class="form-label">Adresse</label>
                     <input type="text" class="form-control" id="adresse" name="adresse">
                 </div>
                 <button type="submit" class="btn btn-primary">Ajouter</button>

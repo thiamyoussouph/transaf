@@ -72,8 +72,9 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Gestion Camions:</h6>
-                <a class="collapse-item" href="{{ route('camion.index') }}">Lister</a>
-                <a class="collapse-item" href="{{ route('camion.forme') }}">Ajout</a>
+                <a class="collapse-item" href="{{ route('camion.index') }}">Liste Des Camions</a>
+                <a class="collapse-item" href="{{ route('camion.forme') }}">Ajouter Un Camion</a>
+                <a class="collapse-item" href="{{ route('chauffeur_Camion.index') }}">Liste Des Camions Affectés</a>
             </div>
         </div>
     </li>
@@ -85,8 +86,12 @@
         <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Gestion chauffeurs:</h6>
-                <a class="collapse-item" href="{{ route('chauffeur.index') }}">Lister</a>
-                <a class="collapse-item" href="{{ route('chauffeur.forme') }}">Ajout</a>
+                <a class="collapse-item" href="{{ route('chauffeur.index') }}">Liste Des Chauffeurs</a>
+                <a class="collapse-item" href="{{ route('chauffeur.forme') }}">Ajouter Un Chauffeur</a>
+                <a class="collapse-item" href="{{ route('chauffeur_Camion.create') }}">Affecter Un Camion</a>
+                
+
+
             </div>
         </div>
     </li>
@@ -100,7 +105,7 @@
         <div id="collapseT" class="collapse" aria-labelledby="headingT" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Gestion des mouvements:</h6>
-                <a class="collapse-item" href="{{ route('mouvement.index') }}">Lister</a>
+                <a class="collapse-item" href="{{ route('mouvement.index') }}">Liste</a>
                 <a class="collapse-item" href="{{ route('mouvement.forme') }}">Ajouter Chargement</a>
                 <a class="collapse-item" href="{{ route('mouvement.formeDecharger') }}">Ajouter Déchargement</a>
 
