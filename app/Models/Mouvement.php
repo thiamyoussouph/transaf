@@ -31,20 +31,4 @@ class Mouvement extends Model
     {
         return $this->belongsTo(Categorie::class);
     }
-    public function lieu()
-    {
-        return $this->belongsTo(Lieu::class);
-    }
-    public function lieudechargement()
-    {
-        return $this->belongsTo(Lieudechargement::class);
-    }
-    public function chargement()
-    {
-        return $this->belongsTo(Chargement::class);
-    }
-    public function dechargement()
-    {
-        return $this->belongsTo(Dechargement::class);
-    }
 }
