@@ -1,7 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,16 +17,45 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+    return redirect()->route('login');
 });
 
-//Home page routes
-Route::get('/home', function () {
-    return view('home');
-});
-Auth::routes();
+Auth::routes(['register' => false]);
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Profile Routes
+Route::prefix('profile')->name('profile.')->middleware('auth')->group(function(){
+    Route::get('/', [HomeController::class, 'getProfile'])->name('detail');
+    Route::post('/update', [HomeController::class, 'updateProfile'])->name('update');
+    Route::post('/change-password', [HomeController::class, 'changePassword'])->name('change-password');
+});
+
+// Roles
+Route::resource('roles', App\Http\Controllers\RolesController::class);
+
+// Permissions
+Route::resource('permissions', App\Http\Controllers\PermissionsController::class);
+
+
+// Users 
+Route::middleware('auth')->prefix('users')->name('users.')->group(function(){
+    Route::get('/', [UserController::class, 'index'])->name('index');
+    Route::get('/create', [UserController::class, 'create'])->name('create');
+    Route::post('/store', [UserController::class, 'store'])->name('store');
+    Route::get('/edit/{user}', [UserController::class, 'edit'])->name('edit');
+    Route::put('/update/{user}', [UserController::class, 'update'])->name('update');
+    Route::delete('/delete/{user}', [UserController::class, 'delete'])->name('destroy');
+    Route::get('/update/status/{user_id}/{status}', [UserController::class, 'updateStatus'])->name('status');
+
+    
+    Route::get('/import-users', [UserController::class, 'importUsers'])->name('import');
+    Route::post('/upload-users', [UserController::class, 'uploadUsers'])->name('upload');
+
+    Route::get('export/', [UserController::class, 'export'])->name('export');
+
+});
+Route::middleware('auth')->group(function(){
 
 Route::get('/camion', [App\Http\Controllers\CamionController::class, 'index'])->name('camion.index');
 Route::get('/camion/create', [App\Http\Controllers\CamionController::class, 'create'])->name('camion.forme');
@@ -31,6 +63,7 @@ Route::post('/ajout', [App\Http\Controllers\CamionController::class, 'store'])->
 Route::get('/camion/{id}', [App\Http\Controllers\CamionController::class, 'show'])->name('camion.detail');
 Route::get('/camion/destroy/{id}', [App\Http\Controllers\CamionController::class, 'destroy'])->name('camion.destroy');
 
+});
 Route::get('/lieu', [App\Http\Controllers\LieuController::class, 'index'])->name('lieu.index');
 Route::get('/lieu/create', [App\Http\Controllers\LieuController::class, 'create'])->name('lieu.forme');
 Route::post('/addLieu', [App\Http\Controllers\LieuController::class, 'store'])->name('lieu.store');
