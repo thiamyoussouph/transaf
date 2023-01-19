@@ -14,7 +14,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            <h2 class="text-center mb-3">Welcome To Tech-Admin Dashboard!</h2>
+            <h2 class="text-center mb-3">Bienvenue {{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</h2>
         </div>
     </div>
 

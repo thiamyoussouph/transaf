@@ -29,6 +29,22 @@ class PermissionSeeder extends Seeder
             'permission-create',
             'permission-edit',
             'permission-delete',
+            'camion-list',
+            'camion-create',
+            'camion-show',
+            'camion-destroy',
+            'lieu-list',
+            'lieu-create',
+            'lieu-show',
+            'lieu-destroy',
+            'categorie-list',
+            'categorie-create',
+            'categorie-show',
+            'categorie-destroy',
+            'chauffeur-list',
+            'chauffeur-create',
+            'chauffeur-show',
+            'chauffeur-destroy'
         ];
 
         foreach($permissions as $permission){
@@ -47,5 +63,7 @@ class PermissionSeeder extends Seeder
         // Admin Role Sync Permission
         $user = User::where('role_id', 1)->first();
         $user->assignRole($role->id);
+
+        
     }
 }

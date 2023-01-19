@@ -7,6 +7,21 @@ use App\Models\Chauffeur;
 
 class chauffeurController extends Controller
 {
+
+       /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('permission:chauffeur-list|chauffeur-create|chauffeur-show|chauffeur-destroy', ['only' => ['index']]);
+        $this->middleware('permission:chauffeur-create', ['only' => ['create','store']]);
+        $this->middleware('permission:chauffeur-show', ['only' => ['show']]);
+        $this->middleware('permission:chauffeur-destroy', ['only' => ['destroy']]);
+    }
+
     /**
      * Display a listing of the resource.
      *

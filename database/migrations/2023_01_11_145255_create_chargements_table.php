@@ -13,13 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('chauffeurs', function (Blueprint $table) {
+        Schema::create('chargements', function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
-            $table->string('prenom');
-            $table->string('telephone')->unique();
-            $table->string('adresse')->unique();
-            $table->string('CIN')->unique();
+            $table->double('quantite');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('chauffeurs');
+        Schema::dropIfExists('chargements');
     }
 };

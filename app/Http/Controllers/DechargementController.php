@@ -2,26 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\dechargement;
 use Illuminate\Http\Request;
-use App\Models\Lieu;
-class LieuController extends Controller
+
+class DechargementController extends Controller
 {
-
-       /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-        $this->middleware('permission:lieu-list|lieu-create|lieu-show|lieu-destroy', ['only' => ['index']]);
-        $this->middleware('permission:lieu-create', ['only' => ['create','store']]);
-        $this->middleware('permission:lieu-show', ['only' => ['show']]);
-        $this->middleware('permission:lieu-destroy', ['only' => ['destroy']]);
-    }
-
-
     /**
      * Display a listing of the resource.
      *
@@ -29,9 +14,7 @@ class LieuController extends Controller
      */
     public function index()
     {
-      $Lieux = Lieu::all();
-        return view('lieu.index', compact('Lieux'));
-
+        //
     }
 
     /**
@@ -41,7 +24,7 @@ class LieuController extends Controller
      */
     public function create()
     {
-        return view('lieu.forme',);
+        //
     }
 
     /**
@@ -52,17 +35,16 @@ class LieuController extends Controller
      */
     public function store(Request $request)
     {
-        Lieu::create($request->all());
-        return redirect()->route('lieu.index');
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\dechargement  $dechargement
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(dechargement $dechargement)
     {
         //
     }
@@ -70,10 +52,10 @@ class LieuController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\dechargement  $dechargement
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(dechargement $dechargement)
     {
         //
     }
@@ -82,10 +64,10 @@ class LieuController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\dechargement  $dechargement
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, dechargement $dechargement)
     {
         //
     }
@@ -93,10 +75,10 @@ class LieuController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\dechargement  $dechargement
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(dechargement $dechargement)
     {
         //
     }

@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('lieus', function (Blueprint $table) {
             $table->id();
-            $table->string('libelle');
-            $table->timestamps();
+            $table->string('libelle')->unique();
+      $table->timestamps();
         });
     }
 

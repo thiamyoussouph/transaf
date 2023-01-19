@@ -15,12 +15,7 @@ return new class extends Migration
     {
         Schema::create('mouvement_lieus', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('datecreation');
-            $table->float('quantite');
-            $table->unsignedBigInteger('lieu_id');
-            $table->unsignedBigInteger('mouvement_id');
-            $table->foreign('mouvement_id')->references('id')->on('mouvements');
-            $table->foreign('lieu_id')->references('id')->on('lieus');
+           
             $table->timestamps();
         });
     }

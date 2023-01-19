@@ -15,9 +15,8 @@ return new class extends Migration
     {
         Schema::create('chauffeur_camions', function (Blueprint $table) {
             $table->id();
-            $table->dateTime('dateAffectation');
             $table->unsignedBigInteger('chauffeur_id');
-            $table->unsignedBigInteger('camion_id');
+            $table->unsignedBigInteger('camion_id')->unique();
             $table->foreign('chauffeur_id')->references('id')->on('chauffeurs');
             $table->foreign('camion_id')->references('id')->on('camions');
             $table->timestamps();

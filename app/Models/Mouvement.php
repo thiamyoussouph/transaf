@@ -13,17 +13,16 @@ class Mouvement extends Model
         'categorie_id',
         'description',
         'camion_id',
-        'quantite',
-        'user_id',
-   ];
-   public function mouvement_lieux()
+        'lieu_id',
+        'chargement_id',
+        'dechargement_id',
+        'decharger',
+    ];
+    public function mouvement_lieux()
     {
         return $this->hasMany(Mouvement_lieu::class);
     }
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
+
     public function camion()
     {
         return $this->belongsTo(Camion::class);
@@ -31,5 +30,21 @@ class Mouvement extends Model
     public function categorie()
     {
         return $this->belongsTo(Categorie::class);
+    }
+    public function lieu()
+    {
+        return $this->belongsTo(Lieu::class);
+    }
+    public function lieudechargement()
+    {
+        return $this->belongsTo(Lieudechargement::class);
+    }
+    public function chargement()
+    {
+        return $this->belongsTo(Chargement::class);
+    }
+    public function dechargement()
+    {
+        return $this->belongsTo(Dechargement::class);
     }
 }

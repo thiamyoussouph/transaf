@@ -5,14 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Lieu extends Model
+class chargement extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'libelle'
+        'quantite',
+        'user_id'
     ];
-    public function mouvements()
+    public function user()
     {
-        return $this->hasMany(Mouvement::class);
+        return $this->belongsTo(User::class);
     }
+    
 }

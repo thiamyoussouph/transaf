@@ -13,13 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('chauffeurs', function (Blueprint $table) {
+        Schema::create('lieudechargements', function (Blueprint $table) {
             $table->id();
-            $table->string('nom');
-            $table->string('prenom');
-            $table->string('telephone')->unique();
-            $table->string('adresse')->unique();
-            $table->string('CIN')->unique();
+            $table->string('libelle')->unique();
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('chauffeurs');
+        Schema::dropIfExists('lieudechargements');
     }
 };

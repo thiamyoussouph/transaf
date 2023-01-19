@@ -1,9 +1,16 @@
 <?php
 
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LieuController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\CamionController;
+use App\Http\Controllers\CategorieController;
+use App\Http\Controllers\ChauffeurController;
+use App\Http\Controllers\MouvementController;
+use App\Http\Controllers\Mouvement_lieuController;
+use App\Http\Controllers\chauffeur_CammionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -55,48 +62,61 @@ Route::middleware('auth')->prefix('users')->name('users.')->group(function(){
     Route::get('export/', [UserController::class, 'export'])->name('export');
 
 });
-Route::middleware('auth')->group(function(){
+Route::middleware('auth')->prefix('camion')->name('camion.')->group(function(){
 
-Route::get('/camion', [App\Http\Controllers\CamionController::class, 'index'])->name('camion.index');
-Route::get('/camion/create', [App\Http\Controllers\CamionController::class, 'create'])->name('camion.forme');
-Route::post('/ajout', [App\Http\Controllers\CamionController::class, 'store'])->name('camion.store');
-Route::get('/camion/{id}', [App\Http\Controllers\CamionController::class, 'show'])->name('camion.detail');
-Route::get('/camion/destroy/{id}', [App\Http\Controllers\CamionController::class, 'destroy'])->name('camion.destroy');
+Route::get('/', [CamionController::class, 'index'])->name('index');
+Route::get('/create', [CamionController::class,  'create'])->name('forme');
+Route::post('/addCamion', [CamionController::class,  'store'])->name('store');
+Route::get('/{id}', [CamionController::class,  'show'])->name('detail');
+Route::get('/destroy/{id}', [CamionController::class,  'destroy'])->name('destroy');
 
 });
-Route::get('/lieu', [App\Http\Controllers\LieuController::class, 'index'])->name('lieu.index');
-Route::get('/lieu/create', [App\Http\Controllers\LieuController::class, 'create'])->name('lieu.forme');
-Route::post('/addLieu', [App\Http\Controllers\LieuController::class, 'store'])->name('lieu.store');
-Route::get('/lieu/destroy/{id}', [App\Http\Controllers\LieuController::class, 'destroy'])->name('lieu.destroy');
+Route::middleware('auth')->prefix('lieu')->name('lieu.')->group(function(){
+Route::get('/', [LieuController::class, 'index'])->name('index');
+Route::get('/create',  [LieuController::class, 'create'])->name('create');
+Route::post('/addLieu',  [LieuController::class, 'store'])->name('store');
+Route::get('/destroy/{id}',  [LieuController::class, 'destroy'])->name('destroy');
+});
+//Route Categories
 
-Route::get('/categorie', [App\Http\Controllers\CategorieController::class, 'index'])->name('categorie.index');
-Route::get('/categorie/create', [App\Http\Controllers\CategorieController::class, 'create'])->name('categorie.forme');
-Route::post('/add', [App\Http\Controllers\CategorieController::class, 'store'])->name('categorie.store');
-Route::get('/categorie/destroy/{id}', [App\Http\Controllers\CategorieController::class, 'destroy'])->name('categorie.destroy');
+Route::middleware('auth')->prefix('categorie')->name('categorie.')->group(function(){
+Route::get('/', [CategorieController::class, 'index'])->name('index');
+Route::get('/create', [CategorieController::class, 'create'])->name('create');
+Route::post('/add', [CategorieController::class,'store'])->name('store');
+Route::get('/destroy/{id}', [CategorieController::class, 'destroy'])->name('destroy');
+});
 
+//Route Mouvement
 
-Route::get('/mouvement', [App\Http\Controllers\MouvementController::class, 'index'])->name('mouvement.index');
-Route::get('/mouvement/create', [App\Http\Controllers\MouvementController::class, 'create'])->name('mouvement.forme');
-Route::get('/mouvement/create/decharger', [App\Http\Controllers\MouvementController::class, 'createDecharge'])->name('mouvement.formeDecharger');
-Route::post('/mouvementadd', [App\Http\Controllers\MouvementController::class, 'store'])->name('mouvement.store');
-Route::post('/mouvementadddecharge', [App\Http\Controllers\MouvementController::class, 'decharger'])->name('mouvement.store.decharge');
-Route::get('/mouvement/destroy/{id}', [App\Http\Controllers\MouvementController::class, 'destroy'])->name('mouvement.destroy');
-Route::get('/mouvement/details', [App\Http\Controllers\MouvementController::class, 'details'])->name('mouvement.details');
+Route::middleware('auth')->prefix('mouvement')->name('mouvement.')->group(function(){
+    Route::get('/', [MouvementController::class, 'index'])->name('index');
+    Route::get('/create', [MouvementController::class, 'create'])->name('forme');
+    Route::get('/create/decharger', [MouvementController::class, 'createDecharge'])->name('formeDecharger');
+    Route::post('/mouvementadd', [MouvementController::class, 'store'])->name('store');
+    Route::post('/mouvementadddecharge', [MouvementController::class, 'decharger'])->name('store.decharge');
+    Route::get('/destroy/{id}', [MouvementController::class, 'destroy'])->name('destroy');
+    Route::get('/details', [MouvementController::class, 'details'])->name('details');
+});
+// Route Mouvement_lieu
 
+Route::middleware('auth')->prefix('mouvement_lieu')->name('mouvement_lieu.')->group(function(){
+Route::get('/', [Mouvement_lieuController::class, 'index'])->name('index');
+Route::get('/create', [Mouvement_lieuController::class, 'create'])->name('forme');
+Route::post('mouvement_lieuadd', [Mouvement_lieuController::class, 'store'])->name('store');
+Route::get('/destroy/{id}', [Mouvement_lieuController::class, 'destroy'])->name('destroy');
+});
 
-
-Route::get('mouvement_lieu', [App\Http\Controllers\Mouvement_lieuController::class, 'index'])->name('mouvement_lieu.index');
-Route::get('mouvement_lieu/create', [App\Http\Controllers\Mouvement_lieuController::class, 'create'])->name('mouvement_lieu.forme');
-Route::post('mouvement_lieuadd', [App\Http\Controllers\Mouvement_lieuController::class, 'store'])->name('mouvement_lieu.store');
-Route::get('mouvement_lieu/destroy/{id}', [App\Http\Controllers\Mouvement_lieuController::class, 'destroy'])->name('mouvement_lieu.destroy');
-
-
-Route::get('/chauffeur', [App\Http\Controllers\ChauffeurController::class, 'index'])->name('chauffeur.index');
-Route::get('/chauffeur/create', [App\Http\Controllers\ChauffeurController::class, 'create'])->name('chauffeur.forme');
-Route::post('/chauffeuradd', [App\Http\Controllers\ChauffeurController::class, 'store'])->name('chauffeur.store');
-Route::get('/chauffeur/destroy/{id}', [App\Http\Controllers\ChauffeurController::class, 'destroy'])->name('chauffeur.destroy');
-
-Route::get('/chauffeur_Camion', [App\Http\Controllers\chauffeur_CammionController::class, 'index'])->name('chauffeur_Camion.index');
-Route::get('/chauffeur_Camion/create', [App\Http\Controllers\chauffeur_CammionController::class, 'create'])->name('chauffeur_Camion.forme');
-Route::post('/chauffeur_Camionadd', [App\Http\Controllers\chauffeur_CammionController::class, 'store'])->name('chauffeur_Camion.store');
-Route::get('/chauffeur_Camion/destroy/{id}', [App\Http\Controllers\chauffeur_CammionController::class, 'destroy'])->name('chauffeur_Camion.destroy');
+// Route Chauffeur
+Route::middleware('auth')->prefix('chauffeur')->name('chauffeur.')->group(function(){
+Route::get('/', [ChauffeurController::class, 'index'])->name('index');
+Route::get('/create', [ChauffeurController::class, 'create'])->name('forme');
+Route::post('/chauffeuradd', [ChauffeurController::class, 'store'])->name('store');
+Route::get('/destroy/{id}', [ChauffeurController::class, 'destroy'])->name('destroy');
+});
+//Route Chauffeur_Camion
+Route::middleware('auth')->prefix('chauffeur_Camion')->name('chauffeur_Camion.')->group(function(){
+Route::get('/', [chauffeur_CammionController::class, 'index'])->name('index');
+Route::get('/create', [chauffeur_CammionController::class, 'create'])->name('create');
+Route::post('/chauffeur_Camionadd', [chauffeur_CammionController::class, 'store'])->name('store');
+Route::get('/destroy/{id}',  [chauffeur_CammionController::class, 'destroy'])->name('destroy');
+});
