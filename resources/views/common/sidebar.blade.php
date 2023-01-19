@@ -28,9 +28,9 @@
             <div id="taTpDropDown" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">User Management:</h6>
-                    <a class="collapse-item" href="{{ route('users.index') }}">List</a>
-                    <a class="collapse-item" href="{{ route('users.create') }}">Add New</a>
-                    <a class="collapse-item" href="{{ route('users.import') }}">Import Data</a>
+                    <a class="collapse-item" href="{{ route('users.index') }}">Liste Utilisateurs</a>
+                    <a class="collapse-item" href="{{ route('users.create') }}">jouter Nouveau</a>
+                    <a class="collapse-item" href="{{ route('users.import') }}">Importer Données</a>
                 </div>
             </div>
         </li>
@@ -45,7 +45,7 @@
                 data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Gestion Lieux:</h6>
-                    <a href="{{ route('lieu.index') }}" class="collapse-item" >Lister</a>
+                    <a href="{{ route('lieu.index') }}" class="collapse-item" >Liste Des Lieux</a>
                     {{-- <a href="{{ route('lieu.create') }}" class="collapse-item" >Ajout</a> --}}
                 </div>
             </div>
@@ -54,12 +54,12 @@
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilit" aria-expanded="true" aria-controls="collapseUtilit">
             <i class="fas fa-fw fa-user"></i>
-            <span>Categorie</span>
+            <span>Categories</span>
         </a>
         <div id="collapseUtilit" class="collapse" aria-labelledby="headingUtilit" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Gestion Categories:</h6>
-                <a href="{{ route('categorie.index') }}" class="collapse-item">Lister</a>
+                <a href="{{ route('categorie.index') }}" class="collapse-item">Liste Catégories</a>
             </div>
         </div>
     </li>
